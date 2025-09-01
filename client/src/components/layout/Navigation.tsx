@@ -32,7 +32,7 @@ export default function Navigation() {
               <img 
                 src={logoImage} 
                 alt="G-Tech"
-                className="h-10 w-auto rotate-90"
+                className="h-14 w-auto rotate-90"
                 style={{ transformOrigin: 'center' }}
               />
             </div>

@@ -12,7 +12,7 @@ export default function Footer() {
               <img 
                 src={logoImage} 
                 alt="G-Tech"
-                className="h-12 w-auto rotate-90"
+                className="h-16 w-auto rotate-90"
                 style={{ transformOrigin: 'center' }}
               />
             </div>

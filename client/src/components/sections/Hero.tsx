@@ -11,7 +11,7 @@ export default function Hero() {
             <img 
               src={logoImage} 
               alt="G-Tech"
-              className="h-20 w-auto rotate-90"
+              className="h-32 w-auto rotate-90"
               style={{ transformOrigin: 'center' }}
             />
           </div>
