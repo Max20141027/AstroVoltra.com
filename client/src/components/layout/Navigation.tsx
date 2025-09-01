@@ -23,9 +23,9 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="material-elevation-2 bg-white sticky top-0 z-50">
+    <nav className="material-elevation-2 bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-18">
           {/* Logo */}
           <Link href="/" data-testid="link-home">
             <div className="cursor-pointer">
@@ -42,10 +42,10 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
-                <span className={`cursor-pointer smooth-transition font-medium ${
+                <span className={`cursor-pointer smooth-transition font-semibold text-lg relative px-3 py-2 rounded-lg ${
                   isActive(item.path) 
-                    ? "text-primary" 
-                    : "text-gray-700 hover:text-primary"
+                    ? "text-primary bg-blue-50" 
+                    : "text-gray-700 hover:text-primary hover:bg-gray-50"
                 }`} data-testid={`link-nav-${item.name.toLowerCase()}`}>
                   {item.name}
                 </span>
