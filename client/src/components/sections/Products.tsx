@@ -71,11 +71,28 @@ export default function Products() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="gradient-text">Our Products</span>
+            <span className="gradient-text">Our Notable Products</span>
           </h2>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Industry-recognized AI platforms that are transforming how we work, learn, and heal.
           </p>
+        </div>
+        
+        {/* Success Stats Section */}
+        <div className="text-center mb-16">
+          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-8 mx-auto max-w-2xl shadow-2xl">
+            <div className="text-white">
+              <div className="text-5xl lg:text-6xl font-bold mb-4 text-shadow">
+                100+
+              </div>
+              <div className="text-xl lg:text-2xl font-semibold mb-2">
+                Apps Created for Clients
+              </div>
+              <div className="text-blue-100 text-lg">
+                Delivering innovative AI solutions across healthcare, education, and enterprise sectors
+              </div>
+            </div>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
