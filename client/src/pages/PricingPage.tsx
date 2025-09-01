@@ -160,6 +160,147 @@ const PricingPage = () => {
         </div>
       </section>
 
+      {/* Enterprise Membership Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+        {/* Luxury background effects */}
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 via-transparent to-amber-900/20"></div>
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-amber-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-gradient-to-r from-amber-400 to-amber-600 text-black px-4 py-2 rounded-full text-sm font-bold mb-6 shadow-lg">
+              EXCLUSIVE PARTNERSHIP
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">
+              Enterprise Membership
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Reserved for Fortune 500 companies and elite organizations seeking 
+              unparalleled software development excellence and exclusive partnership benefits.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <Card className="bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-black/90 backdrop-blur-xl border border-amber-500/30 shadow-2xl">
+              <CardHeader className="text-center pb-8 border-b border-amber-500/20">
+                <div className="inline-block bg-gradient-to-r from-amber-400 to-amber-600 text-black px-6 py-3 rounded-xl font-bold text-lg mb-4 shadow-lg">
+                  PREMIUM TIER
+                </div>
+                <CardTitle className="text-5xl md:text-6xl font-bold mb-4">
+                  <span className="bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">
+                    $500,000
+                  </span>
+                </CardTitle>
+                <div className="text-2xl text-amber-400 font-semibold mb-2">per year</div>
+                <CardDescription className="text-xl text-gray-400 max-w-2xl mx-auto">
+                  The ultimate partnership for organizations that demand nothing less than perfection, 
+                  priority access, and exclusive recognition.
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="p-12">
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div>
+                    <h3 className="text-2xl font-bold text-amber-400 mb-6 flex items-center">
+                      <span className="material-icons mr-3 text-3xl">diamond</span>
+                      Premium Benefits
+                    </h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-4">
+                        <div className="w-6 h-6 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="h-4 w-4 text-black font-bold" />
+                        </div>
+                        <div>
+                          <span className="text-white font-semibold text-lg">Up to 15 Fully Built Apps Per Year</span>
+                          <p className="text-gray-400 mt-1">Any size or complexity, within reason. From simple tools to enterprise-grade platforms.</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4">
+                        <div className="w-6 h-6 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="h-4 w-4 text-black font-bold" />
+                        </div>
+                        <div>
+                          <span className="text-white font-semibold text-lg">Unlimited Debugging</span>
+                          <p className="text-gray-400 mt-1">Round-the-clock issue resolution. No limits, no additional charges.</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4">
+                        <div className="w-6 h-6 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="h-4 w-4 text-black font-bold" />
+                        </div>
+                        <div>
+                          <span className="text-white font-semibold text-lg">24/7 Dedicated Support</span>
+                          <p className="text-gray-400 mt-1">Phone, email, or chat. Your dedicated team is always available.</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-2xl font-bold text-amber-400 mb-6 flex items-center">
+                      <span className="material-icons mr-3 text-3xl">stars</span>
+                      Exclusive Privileges
+                    </h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-4">
+                        <div className="w-6 h-6 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="h-4 w-4 text-black font-bold" />
+                        </div>
+                        <div>
+                          <span className="text-white font-semibold text-lg">Guaranteed Priority Service</span>
+                          <p className="text-gray-400 mt-1">Enterprise clients always come first. Your projects jump to the front of the queue.</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4">
+                        <div className="w-6 h-6 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <Check className="h-4 w-4 text-black font-bold" />
+                        </div>
+                        <div>
+                          <span className="text-white font-semibold text-lg">Exclusive Recognition</span>
+                          <p className="text-gray-400 mt-1">Featured on our 'Notable Apps' showcase as a premium partner with special recognition.</p>
+                        </div>
+                      </li>
+                    </ul>
+                    
+                    <div className="mt-8 p-6 bg-gradient-to-r from-amber-900/30 to-amber-800/30 rounded-xl border border-amber-500/30">
+                      <div className="flex items-center mb-3">
+                        <span className="material-icons text-amber-400 mr-2">workspace_premium</span>
+                        <span className="text-amber-400 font-semibold">Elite Partnership Status</span>
+                      </div>
+                      <p className="text-gray-300 text-sm">
+                        Join an exclusive circle of industry leaders who trust G-Tech with their most critical software initiatives.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+              
+              <CardFooter className="p-12 pt-8 border-t border-amber-500/20">
+                <div className="w-full text-center">
+                  <Link href="/contact">
+                    <Button 
+                      size="lg" 
+                      className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold px-12 py-4 text-xl rounded-xl shadow-2xl hover:shadow-amber-500/25 transition-all duration-300 mb-4"
+                      data-testid="button-enterprise-membership"
+                    >
+                      <span className="material-icons mr-3">diamond</span>
+                      Apply for Membership
+                    </Button>
+                  </Link>
+                  <p className="text-gray-400 text-sm mt-4">
+                    Membership is by application only. Limited to select organizations that align with our standards of excellence.
+                  </p>
+                  <div className="mt-6 text-amber-400 font-semibold">
+                    Contact: gtech.service@outlook.com
+                  </div>
+                </div>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Custom Quote Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
         <div className="container mx-auto text-center">
