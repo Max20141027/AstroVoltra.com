@@ -26,14 +26,14 @@ export default function Footer() {
               that transform industries and improve lives.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/g-tech-ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-linkedin">
-                <span className="material-icons">linkedin</span>
+              <a href="mailto:gtech.service@outlook.com" className="text-gray-400 hover:text-blue-400 smooth-transition" data-testid="link-email">
+                <span className="material-icons text-xl">email</span>
               </a>
-              <a href="https://twitter.com/gtechvictoria" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-twitter">
-                <span className="material-icons">twitter</span>
+              <a href="/contact" className="text-gray-400 hover:text-blue-400 smooth-transition" data-testid="link-contact-footer">
+                <span className="material-icons text-xl">phone</span>
               </a>
-              <a href="https://github.com/g-tech-victoria" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-github">
-                <span className="material-icons">code</span>
+              <a href="/pricing" className="text-gray-400 hover:text-blue-400 smooth-transition" data-testid="link-pricing-footer">
+                <span className="material-icons text-xl">price_check</span>
               </a>
             </div>
           </div>
@@ -55,8 +55,9 @@ export default function Footer() {
               <li><Link href="/about"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-about">About Us</span></Link></li>
               <li><Link href="/careers"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-careers">Careers</span></Link></li>
               <li><Link href="/contact"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-contact">Contact</span></Link></li>
-              <li><a href="/privacy" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-privacy">Privacy Policy</a></li>
-              <li><a href="/terms" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-terms">Terms of Service</a></li>
+              <li><Link href="/privacy"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-privacy">Privacy Policy</span></Link></li>
+              <li><Link href="/terms"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-terms">Terms of Service</span></Link></li>
+              <li><Link href="/pricing"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-pricing">Pricing</span></Link></li>
             </ul>
           </div>
         </div>

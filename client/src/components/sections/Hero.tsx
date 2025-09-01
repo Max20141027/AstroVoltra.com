@@ -36,7 +36,7 @@ export default function Hero() {
             <Link href="/products">
               <Button 
                 size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50 hover:shadow-xl smooth-transition px-8 py-4 text-lg font-semibold rounded-xl"
+                className="bg-white text-blue-600 hover:bg-blue-50 hover:shadow-xl smooth-transition px-8 py-4 text-lg font-semibold rounded-xl btn-professional"
                 data-testid="button-explore-products"
               >
                 <span className="mr-2">🚀</span>
@@ -47,7 +47,7 @@ export default function Hero() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:bg-opacity-15 hover:shadow-xl smooth-transition px-8 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm"
+                className="border-2 border-white text-white hover:bg-white hover:bg-opacity-15 hover:shadow-xl smooth-transition px-8 py-4 text-lg font-semibold rounded-xl backdrop-blur-sm btn-professional"
                 data-testid="button-contact-us"
               >
                 <span className="mr-2">💬</span>

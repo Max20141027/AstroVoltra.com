@@ -1,4 +1,5 @@
 import { Check, Calculator, Headphones } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -136,15 +137,17 @@ const PricingPage = () => {
                 
                 <CardFooter className="pt-4 border-t border-gray-100">
                   <div className="w-full">
-                    <Button 
-                      className={`w-full mb-3 ${pkg.popular 
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700' 
-                        : 'bg-gray-800 hover:bg-gray-700'
-                      } text-white`}
-                      data-testid={`button-contact-${index}`}
-                    >
-                      Get Started
-                    </Button>
+                    <Link href="/contact">
+                      <Button 
+                        className={`w-full mb-3 ${pkg.popular 
+                          ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700' 
+                          : 'bg-gray-800 hover:bg-gray-700'
+                        } text-white`}
+                        data-testid={`button-contact-${index}`}
+                      >
+                        Get Started
+                      </Button>
+                    </Link>
                     <div className="text-center">
                       <div className="text-sm text-gray-600">Maintenance & Support</div>
                       <div className="font-semibold text-gray-800">{pkg.maintenance}</div>
@@ -181,13 +184,15 @@ const PricingPage = () => {
               </div>
             </div>
             
-            <Button 
-              size="lg" 
-              className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3 text-lg"
-              data-testid="button-custom-quote"
-            >
-              Request Custom Quote
-            </Button>
+            <Link href="/contact">
+              <Button 
+                size="lg" 
+                className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-3 text-lg"
+                data-testid="button-custom-quote"
+              >
+                Request Custom Quote
+              </Button>
+            </Link>
             <div className="mt-4 text-blue-100">
               Contact us at <span className="font-semibold">gtech.service@outlook.com</span>
             </div>
@@ -280,13 +285,15 @@ const PricingPage = () => {
             Get in touch with our team to discuss your requirements and receive a detailed proposal.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-8 py-3 text-lg"
-              data-testid="button-start-project"
-            >
-              Start Your Project
-            </Button>
+            <Link href="/contact">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold px-8 py-3 text-lg"
+                data-testid="button-start-project"
+              >
+                Start Your Project
+              </Button>
+            </Link>
             <div className="text-gray-300">
               or email us at <span className="text-blue-400 font-semibold">gtech.service@outlook.com</span>
             </div>

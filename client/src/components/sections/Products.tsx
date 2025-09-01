@@ -128,28 +128,32 @@ export default function Products() {
                             {product.detailedDescription}
                           </p>
                           
-                          <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
-                            <ul className="space-y-2">
-                              {product.keyBenefits.map((benefit, index) => (
-                                <li key={index} className="flex items-start gap-3">
-                                  <span className="material-icons text-green-500 text-lg mt-0.5">check_circle</span>
-                                  <span className="text-gray-700">{benefit}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                          
-                          <div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
-                            <div className="flex flex-wrap gap-2">
-                              {product.technologies.map((tech, index) => (
-                                <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                                  {tech}
-                                </span>
-                              ))}
+                          {product.keyBenefits && (
+                            <div>
+                              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
+                              <ul className="space-y-2">
+                                {product.keyBenefits.map((benefit, index) => (
+                                  <li key={index} className="flex items-start gap-3">
+                                    <span className="material-icons text-green-500 text-lg mt-0.5">check_circle</span>
+                                    <span className="text-gray-700">{benefit}</span>
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
-                          </div>
+                          )}
+                          
+                          {product.technologies && (
+                            <div>
+                              <h3 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
+                              <div className="flex flex-wrap gap-2">
+                                {product.technologies.map((tech, index) => (
+                                  <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                           
                           <div className="border-t pt-6">
                             <p className="text-center text-gray-600 mb-4">
