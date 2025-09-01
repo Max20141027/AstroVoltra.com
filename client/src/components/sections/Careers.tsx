@@ -26,29 +26,24 @@ export default function Careers() {
     setIsSubmitting(true);
     
     try {
-      // Send application directly using EmailJS
-      const templateParams = {
-        to_email: 'gtech.service@outlook.com',
-        from_name: resumeData.name,
-        from_email: resumeData.email,
-        position: resumeData.position,
-        experience: resumeData.experience,
-        cover_letter: resumeData.coverLetter,
-        subject: `Job Application - ${resumeData.position} from G-Tech Website`
-      };
-
-      await emailjs.send(
-        'service_gtech', // Service ID
-        'template_career', // Template ID
-        templateParams,
-        'gtechwebsite2024' // Public Key
-      );
-
-      toast({
-        title: "Application submitted successfully!",
-        description: "Thank you for your interest in G-Tech! We'll review your application and contact you within 48 hours.",
+      // Send application to backend (now using Resend)
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(resumeData)
       });
-      setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
+      
+      if (response.ok) {
+        toast({
+          title: "Application submitted successfully!",
+          description: "Thank you for your interest in G-Tech! We'll review your application and contact you within 48 hours.",
+        });
+        setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
+      } else {
+        throw new Error('Failed to submit application');
+      }
       
     } catch (error) {
       console.error('Application sending failed:', error);

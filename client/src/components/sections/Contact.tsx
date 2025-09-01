@@ -22,28 +22,24 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Send email directly using EmailJS
-      const templateParams = {
-        to_email: 'gtech.service@outlook.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company,
-        message: formData.message,
-        subject: 'Contact Form Inquiry from G-Tech Website'
-      };
-
-      await emailjs.send(
-        'service_gtech', // Service ID
-        'template_contact', // Template ID  
-        templateParams,
-        'gtechwebsite2024' // Public Key
-      );
-
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for contacting G-Tech! We'll respond to your inquiry within 24 hours.",
+      // Send form data to backend (now using Resend)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
       });
-      setFormData({ name: "", email: "", company: "", message: "" });
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for contacting G-Tech! We'll respond to your inquiry within 24 hours.",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
       
     } catch (error) {
       console.error('Email sending failed:', error);
