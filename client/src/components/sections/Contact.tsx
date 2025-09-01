@@ -123,10 +123,10 @@ export default function Contact() {
           </div>
           
           {/* Contact Form */}
-          <Card className="material-card material-elevation-1 glass-card border-0 overflow-hidden">
-            <CardContent className="p-10">
+          <Card className="material-card material-elevation-1 glass-card border-0 overflow-hidden relative z-10">
+            <CardContent className="p-10 relative z-20">
               <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Send us a message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-30">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-lg font-semibold text-gray-700">Name *</Label>
                   <Input
@@ -137,8 +137,9 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your full name"
-                    className="h-12 text-lg border-2 focus:border-blue-500 rounded-xl"
+                    className="h-12 text-lg border-2 focus:border-blue-500 rounded-xl relative z-50"
                     data-testid="input-name"
+                    style={{pointerEvents: 'auto'}}
                   />
                 </div>
                 
@@ -152,8 +153,9 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your.email@example.com"
-                    className="h-12 text-lg border-2 focus:border-blue-500 rounded-xl"
+                    className="h-12 text-lg border-2 focus:border-blue-500 rounded-xl relative z-50"
                     data-testid="input-email"
+                    style={{pointerEvents: 'auto'}}
                   />
                 </div>
                 
@@ -166,8 +168,9 @@ export default function Contact() {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company name"
-                    className="h-12 text-lg border-2 focus:border-blue-500 rounded-xl"
+                    className="h-12 text-lg border-2 focus:border-blue-500 rounded-xl relative z-50"
                     data-testid="input-company"
+                    style={{pointerEvents: 'auto'}}
                   />
                 </div>
                 
@@ -181,8 +184,9 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project or inquiry..."
-                    className="resize-none text-lg border-2 focus:border-blue-500 rounded-xl"
+                    className="resize-none text-lg border-2 focus:border-blue-500 rounded-xl relative z-50"
                     data-testid="textarea-message"
+                    style={{pointerEvents: 'auto'}}
                   />
                 </div>
                 
@@ -202,8 +206,8 @@ export default function Contact() {
       </div>
       
       {/* Background decoration */}
-      <div className="absolute top-40 left-10 w-72 h-72 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200 rounded-full opacity-20 blur-3xl"></div>
+      <div className="absolute top-40 left-10 w-72 h-72 bg-blue-200 rounded-full opacity-20 blur-3xl -z-10"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200 rounded-full opacity-20 blur-3xl -z-10"></div>
     </section>
   );
 }
