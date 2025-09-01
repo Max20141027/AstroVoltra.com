@@ -1,0 +1,72 @@
+Here is your **updated AI prompt** for building the **G-Tech** website — tailored exactly as you requested, without leadership bios, timelines, or mockups, and with Material UI included:
+
+---
+
+**🧠 Website Creation Prompt for G-Tech AI Web Builder**
+
+> **Project Brief:**
+> Create a modern, responsive website for **G-Tech**, a software engineering company headquartered in Victoria, Vancouver Island. G-Tech specializes in cutting-edge software solutions and has developed industry-recognized platforms such as **Medi-sense**, **QMS AI**, and **LearnBot**. The design should reflect innovation, trust, and technical expertise. Incorporate the attached logo prominently.
+>
+> **Logo Orientation:**
+> The logo should be used horizontally on the site, with the stylized "G" icon beside the word "tech" (not vertically stacked).
+>
+> **Use Material UI:**
+> All components must be built using **Material UI (MUI)** for consistent styling, responsiveness, and a polished look.
+>
+> **Website Structure:**
+> Build the following pages:
+>
+> 1. **Home Page**
+>
+>    * Hero section with the G-Tech logo and a tagline like:
+>      *“Building the Future of Intelligent Software”*
+>    * Brief description of the company
+>    * Highlight of core products: Medi-sense, QMS AI, LearnBot
+>    * Call-to-action button to contact or learn more
+> 2. **About G-Tech**
+>
+>    * Overview of the company's mission, founding, and location
+>    * Emphasis on innovation, education, and community impact
+> 3. **Products Page**
+>
+>    * Sections for each major product:
+>
+>      * **Medi-sense:** AI-powered medical diagnostics
+>      * **QMS AI:** School-specific AI platform
+>      * **LearnBot:** Interactive AI tutor for students
+> 4. **Contact Us**
+>
+>    * Embedded contact form using MUI form components:
+>
+>      * Name
+>      * Email
+>      * Message
+>    * G-Tech's headquarters address (Victoria, Vancouver Island, BC)
+>    * Optional map embed
+>    * Business email and phone (placeholder okay)
+> 5. **Careers Page (Optional but encouraged)**
+>
+>    * A simple section for hiring announcements or future job listings
+>    * Invite software engineers, designers, and AI researchers
+> 6. **Privacy Policy & Terms** (Footer links)
+>
+> **Design Style:**
+>
+> * Built entirely using **Material UI**
+> * Use the logo’s **blue gradient** as a central theme color
+> * Clean, modern, and tech-savvy look
+> * Responsive design for desktop, tablet, and mobile
+> * Font: Sleek, modern sans-serif (e.g., Inter, Roboto, or similar)
+>
+> **Technical Requirements:**
+>
+> * Use HTML, CSS, JavaScript (or React with MUI preferred)
+> * Organized folder structure (assets, components, pages)
+> * Placeholder content allowed where needed
+> * Mobile-optimized
+> * Favicon included
+> * Deployment-ready (e.g., GitHub Pages, Vercel, or Netlify)
+
+---
+
+Let me know if you want the **full React + MUI source code** scaffolding for this site — I can build it out.
