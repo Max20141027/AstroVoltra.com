@@ -10,6 +10,7 @@ import ChatSidebar from "@/components/chat/ChatSidebar";
 import Home from "@/pages/Home";
 import AboutPage from "@/pages/AboutPage";
 import ProductsPage from "@/pages/ProductsPage";
+import PricingPage from "@/pages/PricingPage";
 import CareersPage from "@/pages/CareersPage";
 import ContactPage from "@/pages/ContactPage";
 import Privacy from "@/pages/Privacy";
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/about" component={AboutPage} />
         <Route path="/products" component={ProductsPage} />
+        <Route path="/pricing" component={PricingPage} />
         <Route path="/careers" component={CareersPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/privacy" component={Privacy} />
