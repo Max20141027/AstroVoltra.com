@@ -88,9 +88,8 @@ export default function Terms() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
               <div className="bg-blue-50 p-6 rounded-xl">
                 <p><strong>G-Tech Legal Team</strong></p>
-                <p>Email: legal@g-tech.ca</p>
+                <p>Email: gtech.service@outlook.com</p>
                 <p>Address: Victoria, British Columbia, Canada</p>
-                <p>Phone: +1 (250) 555-0123</p>
               </div>
             </section>
           </div>

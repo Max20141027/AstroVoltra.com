@@ -67,9 +67,8 @@ export default function Privacy() {
               </p>
               <div className="bg-blue-50 p-6 rounded-xl mt-4">
                 <p><strong>G-Tech Privacy Team</strong></p>
-                <p>Email: privacy@g-tech.ca</p>
+                <p>Email: gtech.service@outlook.com</p>
                 <p>Address: Victoria, British Columbia, Canada</p>
-                <p>Phone: +1 (250) 555-0123</p>
               </div>
             </section>
           </div>

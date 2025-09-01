@@ -47,12 +47,7 @@ export default function Contact() {
     {
       icon: "email",
       title: "Email",
-      details: ["hello@g-tech.ai", "careers@g-tech.ai"]
-    },
-    {
-      icon: "phone",
-      title: "Phone",
-      details: ["+1 (250) 555-0123"]
+      details: ["gtech.service@outlook.com"]
     }
   ];
 

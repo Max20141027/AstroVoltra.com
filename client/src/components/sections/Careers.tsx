@@ -159,7 +159,7 @@ export default function Careers() {
                         type="tel"
                         value={resumeData.phone}
                         onChange={handleResumeChange}
-                        placeholder="+1 (250) 555-0123"
+                        placeholder="Your phone number"
                         className="h-12 text-lg"
                       />
                     </div>
