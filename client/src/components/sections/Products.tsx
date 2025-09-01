@@ -1,28 +1,59 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Products() {
+  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
+
   const products = [
     {
       id: "medisense",
       name: "Medi-sense",
       icon: "healing",
       description: "AI-powered medical diagnostics platform that assists healthcare professionals in making faster, more accurate diagnoses with advanced machine learning algorithms.",
-      features: ["Real-time analysis", "HIPAA compliant", "Cloud-based"]
+      features: ["Real-time analysis", "HIPAA compliant", "Cloud-based"],
+      detailedDescription: "Medi-sense revolutionizes healthcare diagnostics by leveraging cutting-edge AI algorithms to analyze medical data with unprecedented accuracy. Our platform integrates seamlessly with existing hospital systems, providing real-time diagnostic assistance to healthcare professionals.",
+      keyBenefits: [
+        "Reduces diagnostic time by up to 60%",
+        "Increases diagnostic accuracy to 98.5%",
+        "Integrates with major EHR systems",
+        "24/7 AI-powered support",
+        "Continuous learning from new cases"
+      ],
+      technologies: ["Deep Learning", "Computer Vision", "Natural Language Processing", "Cloud Computing"]
     },
     {
       id: "qmsai",
       name: "QMS AI",
       icon: "school",
       description: "School-specific AI platform that enhances educational management systems with intelligent analytics, automated workflows, and personalized insights.",
-      features: ["Student analytics", "Automated reporting", "Multi-campus support"]
+      features: ["Student analytics", "Automated reporting", "Multi-campus support"],
+      detailedDescription: "QMS AI transforms educational administration by providing intelligent insights into student performance, resource allocation, and operational efficiency. Our platform helps educational institutions make data-driven decisions that improve learning outcomes.",
+      keyBenefits: [
+        "Improves student success rates by 35%",
+        "Reduces administrative workload by 50%",
+        "Provides predictive analytics for at-risk students",
+        "Automates routine administrative tasks",
+        "Generates comprehensive performance reports"
+      ],
+      technologies: ["Machine Learning", "Data Analytics", "Predictive Modeling", "API Integration"]
     },
     {
       id: "learnbot",
       name: "LearnBot",
       icon: "smart_toy",
       description: "Interactive AI tutor that provides personalized learning experiences for students, adapting to individual learning styles and pace.",
-      features: ["Adaptive learning", "24/7 availability", "Multi-subject support"]
+      features: ["Adaptive learning", "24/7 availability", "Multi-subject support"],
+      detailedDescription: "LearnBot is an intelligent tutoring system that provides personalized education support to students of all ages. Using advanced AI algorithms, it adapts to each student's learning style, pace, and preferences to maximize learning effectiveness.",
+      keyBenefits: [
+        "Increases learning retention by 40%",
+        "Available 24/7 for instant support",
+        "Supports over 50 subjects",
+        "Personalizes content to learning style",
+        "Tracks progress with detailed analytics"
+      ],
+      technologies: ["Natural Language Processing", "Adaptive Learning Algorithms", "Knowledge Graphs", "Conversational AI"]
     }
   ];
 
@@ -59,10 +90,66 @@ export default function Products() {
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl" data-testid={`button-learn-more-${product.id}`}>
-                    Learn More
-                    <span className="ml-2 group-hover:translate-x-1 smooth-transition">→</span>
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl" data-testid={`button-learn-more-${product.id}`}>
+                        Learn More
+                        <span className="ml-2 group-hover:translate-x-1 smooth-transition">→</span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className="flex items-center gap-4 text-3xl">
+                          <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center">
+                            <span className="material-icons text-white text-2xl">{product.icon}</span>
+                          </div>
+                          {product.name}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-6 pt-4">
+                        <p className="text-lg text-gray-600 leading-relaxed">
+                          {product.detailedDescription}
+                        </p>
+                        
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
+                          <ul className="space-y-2">
+                            {product.keyBenefits.map((benefit, index) => (
+                              <li key={index} className="flex items-start gap-3">
+                                <span className="material-icons text-green-500 text-lg mt-0.5">check_circle</span>
+                                <span className="text-gray-700">{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {product.technologies.map((tech, index) => (
+                              <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div className="border-t pt-6">
+                          <p className="text-center text-gray-600 mb-4">
+                            Interested in {product.name}? Let's discuss how it can benefit your organization.
+                          </p>
+                          <div className="flex gap-3 justify-center">
+                            <a href="/contact">
+                              <Button className="px-6 py-2">Contact Sales</Button>
+                            </a>
+                            <a href="/contact">
+                              <Button variant="outline" className="px-6 py-2">Request Demo</Button>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </CardContent>
             </Card>

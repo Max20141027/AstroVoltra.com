@@ -26,13 +26,13 @@ export default function Footer() {
               that transform industries and improve lives.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-linkedin">
+              <a href="https://www.linkedin.com/company/g-tech-ai" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-linkedin">
                 <span className="material-icons">linkedin</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-twitter">
+              <a href="https://twitter.com/gtechvictoria" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-twitter">
                 <span className="material-icons">twitter</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-github">
+              <a href="https://github.com/g-tech-victoria" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white smooth-transition" data-testid="link-github">
                 <span className="material-icons">code</span>
               </a>
             </div>
@@ -55,8 +55,8 @@ export default function Footer() {
               <li><Link href="/about"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-about">About Us</span></Link></li>
               <li><Link href="/careers"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-careers">Careers</span></Link></li>
               <li><Link href="/contact"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-contact">Contact</span></Link></li>
-              <li><a href="#" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-privacy">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-terms">Terms of Service</a></li>
+              <li><a href="/privacy" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-privacy">Privacy Policy</a></li>
+              <li><a href="/terms" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-terms">Terms of Service</a></li>
             </ul>
           </div>
         </div>

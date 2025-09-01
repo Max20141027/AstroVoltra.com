@@ -9,6 +9,8 @@ import AboutPage from "@/pages/AboutPage";
 import ProductsPage from "@/pages/ProductsPage";
 import CareersPage from "@/pages/CareersPage";
 import ContactPage from "@/pages/ContactPage";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +22,8 @@ function Router() {
         <Route path="/products" component={ProductsPage} />
         <Route path="/careers" component={CareersPage} />
         <Route path="/contact" component={ContactPage} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/terms" component={Terms} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
