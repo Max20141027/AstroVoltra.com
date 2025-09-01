@@ -17,15 +17,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         timestamp: new Date().toISOString()
       });
       
-      // In a real application, you would:
-      // 1. Validate the data
-      // 2. Send email to gtech.service@outlook.com
-      // 3. Save to database
-      // 4. Send confirmation email to user
+      // Since we don't have email server configured yet,
+      // return an error to trigger the frontend email client fallback
+      // This ensures the user can actually send the email
+      console.log("Triggering email client fallback for actual email sending...");
       
-      return res.json({ 
-        success: true, 
-        message: "Contact form received. We'll get back to you soon!" 
+      return res.status(500).json({ 
+        success: false, 
+        error: "Email server not configured - triggering email client fallback" 
       });
     } catch (error) {
       console.error("Contact form error:", error);
@@ -52,15 +51,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
         timestamp: new Date().toISOString()
       });
       
-      // In a real application, you would:
-      // 1. Validate the data
-      // 2. Send email to gtech.service@outlook.com with application details
-      // 3. Save to database
-      // 4. Send confirmation email to applicant
+      // Since we don't have email server configured yet,
+      // return an error to trigger the frontend email client fallback
+      // This ensures the user can actually send the application
+      console.log("Triggering email client fallback for actual email sending...");
       
-      return res.json({ 
-        success: true, 
-        message: "Application received. We'll review it and get back to you soon!" 
+      return res.status(500).json({ 
+        success: false, 
+        error: "Email server not configured - triggering email client fallback" 
       });
     } catch (error) {
       console.error("Career application error:", error);
