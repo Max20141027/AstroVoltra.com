@@ -2,8 +2,11 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { Resend } from 'resend';
+import OpenAI from 'openai';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+// the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -118,6 +121,62 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ 
         success: false, 
         error: "Failed to process career application" 
+      });
+    }
+  });
+
+  // Chat API endpoint
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const { message } = req.body;
+      
+      if (!message?.trim()) {
+        return res.status(400).json({ 
+          success: false, 
+          error: "Message is required" 
+        });
+      }
+
+      console.log("Chat message received:", message);
+
+      // Create system prompt with G-Tech information
+      const systemPrompt = `You are G AI, a helpful assistant for G-Tech, a software engineering company based in Victoria, Vancouver Island. Your role is to help visitors learn about G-Tech and our AI products.
+
+G-Tech Information:
+- Location: Victoria, Vancouver Island, British Columbia, Canada
+- Focus: AI-powered software solutions
+- Contact: gtech.service@outlook.com
+
+Our AI Products:
+1. **Medi-sense**: Advanced medical diagnostics AI that helps healthcare professionals make accurate diagnoses faster
+2. **QMS AI**: Educational management system that streamlines school administration and enhances learning outcomes
+3. **LearnBot**: Interactive AI tutor that provides personalized learning experiences for students
+
+Be friendly, knowledgeable, and helpful. Keep responses concise but informative. If asked about topics outside G-Tech, politely redirect the conversation back to our company and products.`;
+
+      const response = await openai.chat.completions.create({
+        model: "gpt-5",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: message }
+        ],
+        max_tokens: 300,
+        temperature: 0.7,
+      });
+
+      const assistantResponse = response.choices[0].message.content;
+
+      console.log("OpenAI response:", assistantResponse);
+
+      return res.json({ 
+        success: true, 
+        response: assistantResponse 
+      });
+    } catch (error) {
+      console.error("Chat API error:", error);
+      return res.status(500).json({ 
+        success: false, 
+        error: "Failed to process chat message" 
       });
     }
   });
