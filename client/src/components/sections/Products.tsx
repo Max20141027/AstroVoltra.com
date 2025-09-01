@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -54,6 +55,14 @@ export default function Products() {
         "Tracks progress with detailed analytics"
       ],
       technologies: ["Natural Language Processing", "Adaptive Learning Algorithms", "Knowledge Graphs", "Conversational AI"]
+    },
+    {
+      id: "your-next-app",
+      name: "Your Next App!",
+      icon: "rocket_launch",
+      description: "Ready to build something amazing? Let's discuss your custom AI solution and bring your vision to life with our expert development team.",
+      features: ["Custom development", "AI integration", "Full-stack solutions"],
+      isCustomApp: true
     }
   ];
 
@@ -69,7 +78,7 @@ export default function Products() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((product, index) => (
             <Card key={product.id} className="material-card material-elevation-1 text-center glass-card border-0 overflow-hidden group" data-testid={`card-product-${product.id}`}>
               <CardContent className="p-10 relative">
@@ -90,66 +99,75 @@ export default function Products() {
                       </div>
                     ))}
                   </div>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl" data-testid={`button-learn-more-${product.id}`}>
+                  {product.isCustomApp ? (
+                    <Link href="/pricing">
+                      <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white" data-testid={`button-learn-more-${product.id}`}>
                         Learn More
                         <span className="ml-2 group-hover:translate-x-1 smooth-transition">→</span>
                       </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                      <DialogHeader>
-                        <DialogTitle className="flex items-center gap-4 text-3xl">
-                          <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center">
-                            <span className="material-icons text-white text-2xl">{product.icon}</span>
-                          </div>
-                          {product.name}
-                        </DialogTitle>
-                      </DialogHeader>
-                      <div className="space-y-6 pt-4">
-                        <p className="text-lg text-gray-600 leading-relaxed">
-                          {product.detailedDescription}
-                        </p>
-                        
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
-                          <ul className="space-y-2">
-                            {product.keyBenefits.map((benefit, index) => (
-                              <li key={index} className="flex items-start gap-3">
-                                <span className="material-icons text-green-500 text-lg mt-0.5">check_circle</span>
-                                <span className="text-gray-700">{benefit}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
-                          <div className="flex flex-wrap gap-2">
-                            {product.technologies.map((tech, index) => (
-                              <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="border-t pt-6">
-                          <p className="text-center text-gray-600 mb-4">
-                            Interested in {product.name}? Let's discuss how it can benefit your organization.
+                    </Link>
+                  ) : (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl" data-testid={`button-learn-more-${product.id}`}>
+                          Learn More
+                          <span className="ml-2 group-hover:translate-x-1 smooth-transition">→</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="flex items-center gap-4 text-3xl">
+                            <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center">
+                              <span className="material-icons text-white text-2xl">{product.icon}</span>
+                            </div>
+                            {product.name}
+                          </DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-6 pt-4">
+                          <p className="text-lg text-gray-600 leading-relaxed">
+                            {product.detailedDescription}
                           </p>
-                          <div className="flex gap-3 justify-center">
-                            <a href="/contact">
-                              <Button className="px-6 py-2">Contact Sales</Button>
-                            </a>
-                            <a href="/contact">
-                              <Button variant="outline" className="px-6 py-2">Request Demo</Button>
-                            </a>
+                          
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">Key Benefits</h3>
+                            <ul className="space-y-2">
+                              {product.keyBenefits.map((benefit, index) => (
+                                <li key={index} className="flex items-start gap-3">
+                                  <span className="material-icons text-green-500 text-lg mt-0.5">check_circle</span>
+                                  <span className="text-gray-700">{benefit}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">Technologies Used</h3>
+                            <div className="flex flex-wrap gap-2">
+                              {product.technologies.map((tech, index) => (
+                                <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                          
+                          <div className="border-t pt-6">
+                            <p className="text-center text-gray-600 mb-4">
+                              Interested in {product.name}? Let's discuss how it can benefit your organization.
+                            </p>
+                            <div className="flex gap-3 justify-center">
+                              <a href="/contact">
+                                <Button className="px-6 py-2">Contact Sales</Button>
+                              </a>
+                              <a href="/contact">
+                                <Button variant="outline" className="px-6 py-2">Request Demo</Button>
+                              </a>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
+                      </DialogContent>
+                    </Dialog>
+                  )}
                 </div>
               </CardContent>
             </Card>
