@@ -67,8 +67,12 @@ export default function Products() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Enhanced background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-indigo-50/50"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-indigo-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
             <span className="gradient-text">Our Notable Products</span>
@@ -80,15 +84,24 @@ export default function Products() {
         
         {/* Success Stats Section */}
         <div className="text-center mb-16">
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-8 mx-auto max-w-2xl shadow-2xl">
-            <div className="text-white">
-              <div className="text-5xl lg:text-6xl font-bold mb-4 text-shadow">
-                100+
+          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-8 mx-auto max-w-2xl shadow-2xl relative group overflow-hidden">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 animate-pulse"></div>
+            {/* Floating particles */}
+            <div className="absolute top-4 left-8 w-2 h-2 bg-white/30 rounded-full animate-ping" style={{animationDelay: '0s'}}></div>
+            <div className="absolute top-12 right-12 w-1 h-1 bg-white/40 rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
+            <div className="absolute bottom-8 left-12 w-1.5 h-1.5 bg-white/35 rounded-full animate-ping" style={{animationDelay: '2s'}}></div>
+            
+            <div className="text-white relative z-10">
+              <div className="text-5xl lg:text-6xl font-bold mb-4 text-shadow group-hover:scale-110 transition-transform duration-500">
+                <span className="bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">
+                  100+
+                </span>
               </div>
-              <div className="text-xl lg:text-2xl font-semibold mb-2">
+              <div className="text-xl lg:text-2xl font-semibold mb-2 group-hover:text-yellow-200 transition-colors duration-300">
                 Apps Created for Clients
               </div>
-              <div className="text-blue-100 text-lg">
+              <div className="text-blue-100 text-lg group-hover:text-white transition-colors duration-300">
                 Delivering innovative AI solutions across healthcare, education, and enterprise sectors
               </div>
             </div>
@@ -97,8 +110,11 @@ export default function Products() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((product, index) => (
-            <Card key={product.id} className="material-card material-elevation-1 text-center glass-card border-0 overflow-hidden group" data-testid={`card-product-${product.id}`}>
+            <Card key={product.id} className="material-card material-elevation-1 text-center glass-card border-0 overflow-hidden group enhanced-card relative" data-testid={`card-product-${product.id}`}>
               <CardContent className="p-10 relative">
+                {/* Advanced card effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 smooth-transition"></div>
                 <div className="relative z-10">
                   <div className="w-20 h-20 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 smooth-transition shadow-lg">

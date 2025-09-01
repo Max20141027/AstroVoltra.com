@@ -293,3 +293,182 @@
     padding: 3rem 0;
   }
 }
+
+/* Advanced animations for wow factor */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(147, 51, 234, 0.3); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(0deg); }
+  75% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes slide-up-fade {
+  0% { 
+    opacity: 0; 
+    transform: translateY(50px) scale(0.95); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0px) scale(1); 
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+  50% { text-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(59, 130, 246, 0.4); }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.3); }
+  50% { border-color: rgba(59, 130, 246, 0.8); }
+}
+
+/* Professional effects */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 3s infinite;
+}
+
+.glow-animation {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.float-gentle {
+  animation: float-gentle 8s ease-in-out infinite;
+}
+
+.slide-up-fade {
+  animation: slide-up-fade 0.8s ease-out forwards;
+}
+
+.text-glow {
+  animation: text-glow 4s ease-in-out infinite;
+}
+
+.border-glow {
+  animation: border-glow 2s ease-in-out infinite;
+}
+
+/* Interactive hover states for maximum wow */
+.interactive-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.interactive-card:hover {
+  transform: translateY(-12px) scale(1.02) rotateX(5deg);
+  box-shadow: 
+    0 25px 50px rgba(0,0,0,0.15),
+    0 15px 35px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* Premium glass effect */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text effects */
+.gradient-text-premium {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Button magic effects */
+.btn-magic {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.btn-magic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(255,255,255,0.2) 100%);
+  transform: translateX(-100%) skewX(-25deg);
+  transition: transform 0.6s ease;
+}
+
+.btn-magic:hover::before {
+  transform: translateX(100%) skewX(-25deg);
+}
+
+.btn-magic:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Particle effects */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: particle-float 8s infinite linear;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -79,11 +79,15 @@ export default function Contact() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-indigo-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-indigo-50 relative overflow-hidden">
+      {/* Enhanced background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-purple-50/30 to-indigo-50/40"></div>
+      <div className="absolute top-0 right-1/4 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl float-gentle"></div>
+      <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-gradient-to-tr from-indigo-200/30 to-blue-200/30 rounded-full blur-3xl" style={{animationDelay: '3s'}}></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16 slide-up-fade">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="gradient-text">Get in Touch</span>
+            <span className="gradient-text-premium">Get in Touch</span>
           </h2>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to transform your business with AI? Let's explore how G-Tech can help you achieve your goals.
@@ -95,8 +99,8 @@ export default function Contact() {
           <div className="space-y-8">            
             <div className="space-y-8">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start space-x-6 group">
-                  <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 smooth-transition">
+                <div key={index} className="flex items-start space-x-6 group interactive-card slide-up-fade" style={{animationDelay: `${index * 0.2}s`}}>
+                  <div className="w-16 h-16 gradient-primary rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 smooth-transition glow-animation">
                     <span className="material-icons text-white text-2xl">{info.icon}</span>
                   </div>
                   <div className="flex-1">
@@ -123,9 +127,9 @@ export default function Contact() {
           </div>
           
           {/* Contact Form */}
-          <Card className="material-card material-elevation-1 glass-card border-0 overflow-hidden relative z-10">
+          <Card className="material-card material-elevation-1 glass-premium border-0 overflow-hidden relative z-10 interactive-card slide-up-fade" style={{animationDelay: '0.4s'}}>
             <CardContent className="p-10 relative z-20">
-              <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Send us a message</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center shimmer-effect">Send us a message</h3>
               <form onSubmit={handleSubmit} className="space-y-6 relative z-30">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-lg font-semibold text-gray-700">Name *</Label>
