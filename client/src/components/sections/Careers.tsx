@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 export default function Careers() {
   const [resumeData, setResumeData] = useState({
@@ -25,31 +26,39 @@ export default function Careers() {
     setIsSubmitting(true);
     
     try {
-      // Attempt to send resume data to backend
-      const response = await fetch('/api/careers', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(resumeData)
+      // Send application directly using EmailJS
+      const templateParams = {
+        to_email: 'gtech.service@outlook.com',
+        from_name: resumeData.name,
+        from_email: resumeData.email,
+        position: resumeData.position,
+        experience: resumeData.experience,
+        cover_letter: resumeData.coverLetter,
+        subject: `Job Application - ${resumeData.position} from G-Tech Website`
+      };
+
+      await emailjs.send(
+        'service_gtech', // Service ID
+        'template_career', // Template ID
+        templateParams,
+        'gtechwebsite2024' // Public Key
+      );
+
+      toast({
+        title: "Application submitted successfully!",
+        description: "Thank you for your interest in G-Tech! We'll review your application and contact you within 48 hours.",
       });
+      setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
       
-      if (response.ok) {
-        toast({
-          title: "Application submitted successfully!",
-          description: "Thank you for your interest in G-Tech. We'll review your application and get back to you soon.",
-        });
-        setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
-      } else {
-        throw new Error('Failed to submit application');
-      }
     } catch (error) {
+      console.error('Application sending failed:', error);
+      
       // Fallback: Open default email client
-      const emailBody = `Name: ${resumeData.name}%0D%0AEmail: ${resumeData.email}%0D%0APhone: ${resumeData.phone}%0D%0APosition: ${resumeData.position}%0D%0AExperience: ${resumeData.experience}%0D%0A%0D%0ACover Letter:%0D%0A${resumeData.coverLetter}`;
+      const emailBody = `Name: ${resumeData.name}%0D%0AEmail: ${resumeData.email}%0D%0APosition: ${resumeData.position}%0D%0AExperience: ${resumeData.experience}%0D%0A%0D%0ACover Letter:%0D%0A${resumeData.coverLetter}`;
       window.open(`mailto:gtech.service@outlook.com?subject=Job Application - ${resumeData.position}&body=${emailBody}`, '_blank');
       
       toast({
-        title: "Opening email client",
+        title: "Email service unavailable",
         description: "We've opened your email client to send your application directly to gtech.service@outlook.com",
       });
       setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });

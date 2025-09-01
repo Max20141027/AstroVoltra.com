@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,31 +22,38 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Attempt to send form data to backend
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
+      // Send email directly using EmailJS
+      const templateParams = {
+        to_email: 'gtech.service@outlook.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        message: formData.message,
+        subject: 'Contact Form Inquiry from G-Tech Website'
+      };
+
+      await emailjs.send(
+        'service_gtech', // Service ID
+        'template_contact', // Template ID  
+        templateParams,
+        'gtechwebsite2024' // Public Key
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for contacting G-Tech! We'll respond to your inquiry within 24 hours.",
       });
+      setFormData({ name: "", email: "", company: "", message: "" });
       
-      if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: "Thank you for your message! We'll get back to you soon at gtech.service@outlook.com",
-        });
-        setFormData({ name: "", email: "", company: "", message: "" });
-      } else {
-        throw new Error('Failed to send message');
-      }
     } catch (error) {
+      console.error('Email sending failed:', error);
+      
       // Fallback: Open default email client
       const emailBody = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
       window.open(`mailto:gtech.service@outlook.com?subject=Contact Form Inquiry&body=${emailBody}`, '_blank');
       
       toast({
-        title: "Opening email client",
+        title: "Email service unavailable",
         description: "We've opened your email client to send the message directly to gtech.service@outlook.com",
       });
       setFormData({ name: "", email: "", company: "", message: "" });
