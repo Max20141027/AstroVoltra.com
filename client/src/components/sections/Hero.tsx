@@ -1,16 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
 
 export default function Hero() {
   return (
     <section className="hero-gradient text-white py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="flex justify-center items-center space-x-4 mb-8">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center">
-              <span className="text-white font-bold text-3xl">G</span>
-            </div>
-            <span className="text-5xl lg:text-6xl font-light">tech</span>
+          <div className="flex justify-center items-center mb-8">
+            <img 
+              src={logoImage} 
+              alt="G-Tech"
+              className="h-20 w-auto rotate-90 filter brightness-0 invert"
+              style={{ transformOrigin: 'center' }}
+            />
           </div>
           
           <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">

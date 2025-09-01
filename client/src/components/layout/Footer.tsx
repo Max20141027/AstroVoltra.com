@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
 
 export default function Footer() {
   return (
@@ -7,11 +8,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">G</span>
-              </div>
-              <span className="text-2xl font-semibold">tech</span>
+            <div className="mb-4">
+              <img 
+                src={logoImage} 
+                alt="G-Tech"
+                className="h-12 w-auto rotate-90"
+                style={{ transformOrigin: 'center' }}
+              />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Building the future of intelligent software with cutting-edge AI solutions 
@@ -34,9 +37,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Products</h3>
             <ul className="space-y-2">
-              <li><Link href="/products" data-testid="link-footer-medisense"><a className="text-gray-300 hover:text-white smooth-transition">Medi-sense</a></Link></li>
-              <li><Link href="/products" data-testid="link-footer-qmsai"><a className="text-gray-300 hover:text-white smooth-transition">QMS AI</a></Link></li>
-              <li><Link href="/products" data-testid="link-footer-learnbot"><a className="text-gray-300 hover:text-white smooth-transition">LearnBot</a></Link></li>
+              <li><Link href="/products"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-medisense">Medi-sense</span></Link></li>
+              <li><Link href="/products"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-qmsai">QMS AI</span></Link></li>
+              <li><Link href="/products"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-learnbot">LearnBot</span></Link></li>
             </ul>
           </div>
           
@@ -44,9 +47,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" data-testid="link-footer-about"><a className="text-gray-300 hover:text-white smooth-transition">About Us</a></Link></li>
-              <li><Link href="/careers" data-testid="link-footer-careers"><a className="text-gray-300 hover:text-white smooth-transition">Careers</a></Link></li>
-              <li><Link href="/contact" data-testid="link-footer-contact"><a className="text-gray-300 hover:text-white smooth-transition">Contact</a></Link></li>
+              <li><Link href="/about"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-about">About Us</span></Link></li>
+              <li><Link href="/careers"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-careers">Careers</span></Link></li>
+              <li><Link href="/contact"><span className="text-gray-300 hover:text-white smooth-transition cursor-pointer" data-testid="link-footer-contact">Contact</span></Link></li>
               <li><a href="#" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-privacy">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white smooth-transition" data-testid="link-footer-terms">Terms of Service</a></li>
             </ul>
