@@ -175,10 +175,7 @@ const PricingPage = () => {
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 bg-clip-text text-transparent">
               Enterprise Membership
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Reserved for Fortune 500 companies and elite organizations seeking 
-              unparalleled software development excellence and exclusive partnership benefits.
-            </p>
+            
           </div>
 
           <div className="max-w-5xl mx-auto">
