@@ -20,15 +20,38 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Attempt to send form data to backend
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message! We'll get back to you soon at gtech.service@outlook.com",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      // Fallback: Open default email client
+      const emailBody = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+      window.open(`mailto:gtech.service@outlook.com?subject=Contact Form Inquiry&body=${emailBody}`, '_blank');
+      
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message! We'll get back to you soon.",
+        title: "Opening email client",
+        description: "We've opened your email client to send the message directly to gtech.service@outlook.com",
       });
       setFormData({ name: "", email: "", company: "", message: "" });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -75,10 +98,19 @@ export default function Contact() {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 smooth-transition">{info.title}</h3>
                     {info.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-gray-600 text-lg leading-relaxed" data-testid={`text-contact-${info.title.toLowerCase().replace(' ', '-')}`}>
-                        {detail}
+                      <div key={detailIndex} className="text-gray-600 text-lg leading-relaxed" data-testid={`text-contact-${info.title.toLowerCase().replace(' ', '-')}`}>
+                        {info.title === "Email" ? (
+                          <a 
+                            href={`mailto:${detail}`}
+                            className="text-blue-600 hover:text-blue-800 underline cursor-pointer smooth-transition"
+                          >
+                            {detail}
+                          </a>
+                        ) : (
+                          detail
+                        )}
                         {detailIndex < info.details.length - 1 && <br />}
-                      </p>
+                      </div>
                     ))}
                   </div>
                 </div>

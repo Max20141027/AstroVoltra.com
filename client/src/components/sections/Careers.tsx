@@ -24,15 +24,38 @@ export default function Careers() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Attempt to send resume data to backend
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(resumeData)
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Application submitted successfully!",
+          description: "Thank you for your interest in G-Tech. We'll review your application and get back to you soon.",
+        });
+        setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
+      } else {
+        throw new Error('Failed to submit application');
+      }
+    } catch (error) {
+      // Fallback: Open default email client
+      const emailBody = `Name: ${resumeData.name}%0D%0AEmail: ${resumeData.email}%0D%0APhone: ${resumeData.phone}%0D%0APosition: ${resumeData.position}%0D%0AExperience: ${resumeData.experience}%0D%0A%0D%0ACover Letter:%0D%0A${resumeData.coverLetter}`;
+      window.open(`mailto:gtech.service@outlook.com?subject=Job Application - ${resumeData.position}&body=${emailBody}`, '_blank');
+      
       toast({
-        title: "Resume submitted successfully!",
-        description: "Thank you for your interest in G-Tech. We'll review your application and get back to you soon.",
+        title: "Opening email client",
+        description: "We've opened your email client to send your application directly to gtech.service@outlook.com",
       });
       setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
