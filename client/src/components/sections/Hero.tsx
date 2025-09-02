@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
 import learnbotImage from "@assets/Learnbot_1756829300667.png";
+import medisenseImage from "@assets/MediSense_1756829751720.png";
+import qmsaiImage from "@assets/Screenshot 2025-09-02 091603_1756829775786.png";
 
 export default function Hero() {
   return (
@@ -40,25 +42,30 @@ export default function Hero() {
           </div>
         </div>
         
-        {/* SchoolMind (QMS AI) interface - appears fourth */}
-        <div className="absolute top-1/2 left-10 w-80 h-56 staggered-bg-4 z-20">
-          <div className="w-full h-full bg-blue-900/90 rounded-xl backdrop-blur-sm border border-blue-400/50 shadow-2xl">
-            <div className="p-4">
-              <div className="flex items-center mb-3">
-                <div className="w-3 h-3 bg-blue-400 rounded-full mr-2"></div>
-                <div className="text-blue-300 font-semibold">SchoolMind - QMS AI</div>
-              </div>
-              <div className="text-white text-sm mb-2">📊 Student Performance Analytics</div>
-              <div className="text-blue-200 text-xs mb-1">✓ Grade Management System</div>
-              <div className="text-blue-200 text-xs mb-1">✓ Behavioral Tracking</div>
-              <div className="text-blue-200 text-xs mb-1">✓ Parent Communication Portal</div>
-              <div className="text-green-400 text-xs mt-2">Status: Active • 1,247 students monitored</div>
-            </div>
+        {/* MediSense interface - appears fourth */}
+        <div className="absolute top-10 left-1/2 w-80 h-60 staggered-bg-4 z-20">
+          <div className="w-full h-full bg-white/95 rounded-xl shadow-2xl border border-blue-400/50">
+            <img 
+              src={medisenseImage}
+              alt="MediSense AI Diagnostics"
+              className="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+        </div>
+        
+        {/* QMSAI interface - appears fifth */}
+        <div className="absolute bottom-10 right-10 w-80 h-60 staggered-bg-5 z-20">
+          <div className="w-full h-full bg-white/95 rounded-xl shadow-2xl border border-purple-400/50">
+            <img 
+              src={qmsaiImage}
+              alt="QMSAI School Platform"
+              className="w-full h-full object-cover rounded-xl"
+            />
           </div>
         </div>
         
         {/* Reduced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-purple-900/40 to-indigo-900/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-indigo-900/30"></div>
       </div>
       
       {/* Ultra-advanced particle system */}
