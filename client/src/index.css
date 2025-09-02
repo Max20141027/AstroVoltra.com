@@ -689,20 +689,23 @@
 /* Staggered background animations */
 .staggered-bg-1 {
   opacity: 0;
-  animation: fade-in-stagger 1s ease-out forwards;
-  animation-delay: 0s;
+  transform: scale(1.1);
+  animation: fade-in-stagger 1.5s ease-out forwards;
+  animation-delay: 0.5s;
 }
 
 .staggered-bg-2 {
   opacity: 0;
-  animation: slide-in-right 1s ease-out forwards;
-  animation-delay: 1s;
+  transform: translateX(50px) scale(0.9);
+  animation: slide-in-right 1.5s ease-out forwards;
+  animation-delay: 1.5s;
 }
 
 .staggered-bg-3 {
   opacity: 0;
-  animation: slide-in-left 1s ease-out forwards;
-  animation-delay: 2s;
+  transform: translateX(-50px) scale(0.9);
+  animation: slide-in-left 1.5s ease-out forwards;
+  animation-delay: 2.5s;
 }
 
 @keyframes fade-in-stagger {
