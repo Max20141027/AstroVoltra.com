@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import learnbotVideo from "@assets/QMS AI (1)_1756843948574.mp4";
+import learnbotVideo from "@assets/QMS AI Promotional_1756847520253.mp4";
 import medisenseVideo from "@assets/Medi Sense_1756843952215.mp4";
 
 export default function Products() {
