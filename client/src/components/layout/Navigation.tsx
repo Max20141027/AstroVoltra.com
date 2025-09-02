@@ -24,15 +24,15 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="material-elevation-2 bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 transition-all duration-300 hover:bg-white/98 hover:shadow-2xl">
+    <nav className="material-elevation-2 glass-ultra sticky top-0 z-50 border-b border-white/20 ultra-smooth hover:shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18">
           {/* Logo */}
           <Link href="/" data-testid="link-home">
-            <div className="cursor-pointer group relative">
-              {/* Logo hover glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-2 group-hover:scale-110 transition-transform duration-300">
+            <div className="cursor-pointer group relative magnetic-element">
+              {/* Enhanced logo glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-xl blur-lg opacity-0 group-hover:opacity-50 ultra-smooth -z-10"></div>
+              <div className="glass-ultra rounded-xl p-2 group-hover:scale-110 ultra-smooth depth-card">
                 <img 
                   src={logoImage} 
                   alt="G-Tech"
@@ -47,7 +47,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path}>
-                <span className={`cursor-pointer smooth-transition font-semibold text-lg relative px-4 py-3 rounded-xl group ${
+                <span className={`cursor-pointer ultra-smooth font-semibold text-lg relative px-4 py-3 rounded-xl group magnetic-element ${
                   isActive(item.path) 
                     ? "text-primary bg-gradient-to-r from-blue-50 to-purple-50 shadow-lg" 
                     : "text-gray-700 hover:text-primary hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 hover:shadow-md"

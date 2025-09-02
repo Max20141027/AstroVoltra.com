@@ -61,18 +61,25 @@ const PricingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden perspective-container">
+      {/* Ultra-advanced background effects */}
+      <div className="absolute inset-0 mesh-background opacity-5"></div>
+      <div className="particle-system">
+        <div className="particle-ultra" style={{top: '20%', left: '90%'}}></div>
+        <div className="particle-ultra" style={{top: '70%', left: '5%'}}></div>
+        <div className="particle-ultra" style={{top: '40%', left: '60%'}}></div>
+      </div>
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-holographic neon-glow slide-up-fade">
             Transparent Pricing
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Professional software development services from Victoria, Vancouver Island. 
             Clear pricing with no hidden fees - because your success is our mission.
           </p>
-          <div className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 max-w-md mx-auto shadow-lg">
+          <div className="glass-ultra border border-white/30 rounded-2xl p-6 max-w-md mx-auto shadow-lg magnetic-element depth-card slide-up-fade" style={{animationDelay: '0.2s'}}>
             <div className="flex items-center justify-center gap-2 mb-2">
               <Calculator className="h-5 w-5 text-blue-600" />
               <span className="font-semibold text-gray-800">Hourly Rate</span>
@@ -87,7 +94,7 @@ const PricingPage = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-holographic slide-up-fade">
               Fixed-Price Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -100,8 +107,9 @@ const PricingPage = () => {
             {packages.map((pkg, index) => (
               <Card 
                 key={index} 
-                className={`relative ${pkg.popular ? 'ring-2 ring-blue-500 shadow-2xl scale-105' : 'shadow-lg'} 
-                bg-white/90 backdrop-blur-sm border-0 hover:shadow-xl transition-all duration-300`}
+                className={`relative depth-card magnetic-element slide-up-fade ${pkg.popular ? 'ring-2 ring-blue-500 shadow-2xl scale-105 glow-animation' : 'shadow-lg'} 
+                glass-ultra border-0 hover:shadow-xl ultra-smooth perspective-container`}
+                style={{animationDelay: `${index * 0.2}s`}}
                 data-testid={`card-package-${index}`}
               >
                 {pkg.popular && (
@@ -139,10 +147,10 @@ const PricingPage = () => {
                   <div className="w-full">
                     <Link href="/contact">
                       <Button 
-                        className={`w-full mb-3 ${pkg.popular 
-                          ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700' 
-                          : 'bg-gray-800 hover:bg-gray-700'
-                        } text-white`}
+                        className={`w-full mb-3 btn-ultra ripple-button hover-lift ${pkg.popular 
+                          ? 'neon-glow' 
+                          : ''
+                        }`}
                         data-testid={`button-contact-${index}`}
                       >
                         Get Started

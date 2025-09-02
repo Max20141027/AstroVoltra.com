@@ -67,15 +67,24 @@ export default function Products() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Enhanced background effects */}
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden perspective-container">
+      {/* Ultra-advanced background effects */}
+      <div className="absolute inset-0 mesh-background opacity-10"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-indigo-50/50"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-indigo-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl float-gentle"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-indigo-200/20 to-blue-200/20 rounded-full blur-3xl float-rotate"></div>
+      
+      {/* Advanced particle system */}
+      <div className="particle-system">
+        <div className="particle-ultra" style={{top: '15%', left: '85%'}}></div>
+        <div className="particle-ultra" style={{top: '45%', left: '10%'}}></div>
+        <div className="particle-ultra" style={{top: '75%', left: '75%'}}></div>
+        <div className="particle-ultra" style={{top: '30%', left: '50%'}}></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 slide-up-fade">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="gradient-text">Our Notable Products</span>
+            <span className="text-holographic neon-glow">Our Notable Products</span>
           </h2>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Industry-recognized AI platforms that are transforming how we work, learn, and heal.
@@ -110,23 +119,23 @@ export default function Products() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((product, index) => (
-            <Card key={product.id} className="material-card material-elevation-1 text-center glass-card border-0 overflow-hidden group enhanced-card relative" data-testid={`card-product-${product.id}`}>
+            <Card key={product.id} className="glass-ultra text-center border-0 overflow-hidden group depth-card magnetic-element perspective-container relative slide-up-fade" style={{animationDelay: `${index * 0.15}s`}} data-testid={`card-product-${product.id}`}>
               <CardContent className="p-10 relative">
-                {/* Advanced card effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 smooth-transition"></div>
+                {/* Ultra-advanced card effects */}
+                <div className="absolute inset-0 mesh-background opacity-0 group-hover:opacity-20 ultra-smooth"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-300/40 to-purple-300/40 rounded-full blur-xl opacity-0 group-hover:opacity-100 ultra-smooth"></div>
+                <div className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-tr from-cyan-300/40 to-blue-300/40 rounded-full blur-xl opacity-0 group-hover:opacity-100 ultra-smooth" style={{animationDelay: '0.2s'}}></div>
                 <div className="relative z-10">
-                  <div className="w-20 h-20 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 smooth-transition shadow-lg">
+                  <div className="w-20 h-20 gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 ultra-smooth shadow-lg hover-lift glow-animation">
                     <span className="material-icons text-white text-3xl">{product.icon}</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 smooth-transition">{product.name}</h3>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 ultra-smooth magnetic-element">{product.name}</h3>
                   <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                     {product.description}
                   </p>
                   <div className="space-y-3 text-gray-500 mb-8">
                     {product.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center justify-center group-hover:text-blue-600 smooth-transition">
+                      <div key={featureIndex} className="flex items-center justify-center group-hover:text-blue-600 ultra-smooth magnetic-element">
                         <span className="material-icons text-green-500 mr-3 text-lg">check_circle</span>
                         <span className="font-medium">{feature}</span>
                       </div>
@@ -134,7 +143,7 @@ export default function Products() {
                   </div>
                   {product.isCustomApp ? (
                     <Link href="/pricing">
-                      <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white" data-testid={`button-learn-more-${product.id}`}>
+                      <Button className="w-full btn-ultra ripple-button hover-lift py-3 text-lg font-semibold" data-testid={`button-learn-more-${product.id}`}>
                         Learn More
                         <span className="ml-2 group-hover:translate-x-1 smooth-transition">→</span>
                       </Button>
@@ -142,7 +151,7 @@ export default function Products() {
                   ) : (
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button className="w-full group-hover:shadow-xl smooth-transition py-3 text-lg font-semibold rounded-xl" data-testid={`button-learn-more-${product.id}`}>
+                        <Button className="w-full btn-ultra ripple-button hover-lift py-3 text-lg font-semibold" data-testid={`button-learn-more-${product.id}`}>
                           Learn More
                           <span className="ml-2 group-hover:translate-x-1 smooth-transition">→</span>
                         </Button>
