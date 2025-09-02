@@ -11,24 +11,26 @@ export default function Hero() {
         {/* Main tech background - appears first */}
         <div className="absolute inset-0 staggered-bg-1">
           <img 
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200" 
+            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200" 
             alt="AI technology background"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-60"
           />
         </div>
         
         {/* LearnBot interface - appears second */}
-        <div className="absolute top-10 right-10 w-96 h-64 staggered-bg-2">
-          <img 
-            src={learnbotImage}
-            alt="LearnBot interface"
-            className="w-full h-full object-cover rounded-xl opacity-40 shadow-2xl"
-          />
+        <div className="absolute top-10 right-10 w-96 h-64 staggered-bg-2 z-20">
+          <div className="w-full h-full bg-gray-900/80 rounded-xl border border-blue-400/50 shadow-2xl">
+            <img 
+              src={learnbotImage}
+              alt="LearnBot interface"
+              className="w-full h-full object-cover rounded-xl opacity-80"
+            />
+          </div>
         </div>
         
         {/* Code interface overlay - appears third */}
-        <div className="absolute bottom-10 left-10 w-80 h-48 staggered-bg-3">
-          <div className="w-full h-full bg-gradient-to-br from-gray-900/60 to-blue-900/60 rounded-xl backdrop-blur-sm border border-white/20 opacity-60">
+        <div className="absolute bottom-10 left-10 w-80 h-48 staggered-bg-3 z-20">
+          <div className="w-full h-full bg-gray-900/90 rounded-xl backdrop-blur-sm border border-green-400/50 shadow-2xl">
             <div className="p-4 text-green-400 font-mono text-sm">
               <div className="mb-2 text-blue-300">&gt; AI Learning System</div>
               <div className="mb-1 text-yellow-300">const learnbot = new AIAssistant();</div>
@@ -38,8 +40,8 @@ export default function Hero() {
           </div>
         </div>
         
-        {/* Overall gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
+        {/* Reduced gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-purple-900/40 to-indigo-900/50"></div>
       </div>
       
       {/* Ultra-advanced particle system */}
