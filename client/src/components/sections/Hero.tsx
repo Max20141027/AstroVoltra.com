@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
         
         {/* MediSense interface - appears fourth */}
-        <div className="absolute top-10 left-1/2 w-80 h-60 staggered-bg-4 z-20">
+        <div className="absolute top-1/2 right-1/3 w-80 h-60 staggered-bg-4 z-20">
           <div className="w-full h-full bg-white/95 rounded-xl shadow-2xl border border-blue-400/50">
             <img 
               src={medisenseImage}
