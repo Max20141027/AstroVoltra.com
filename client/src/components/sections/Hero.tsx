@@ -4,7 +4,17 @@ import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341
 
 export default function Hero() {
   return (
-    <section className="hero-gradient text-white py-24 lg:py-40 relative overflow-hidden perspective-container">      
+    <section className="hero-gradient text-white py-24 lg:py-40 relative overflow-hidden perspective-container">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200" 
+          alt="AI technology background"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
+      </div>
+      
       {/* Ultra-advanced particle system */}
       <div className="particle-system">
         <div className="particle-ultra" style={{top: '10%', left: '10%'}}></div>
