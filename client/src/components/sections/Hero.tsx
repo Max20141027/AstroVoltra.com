@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
-import learnbotImage from "@assets/Learnbot_1756829300667.png";
-import medisenseImage from "@assets/MediSense_1756829751720.png";
+import learnbotVideo from "@assets/QMS AI (1)_1756843948574.mp4";
+import medisenseVideo from "@assets/Medi Sense_1756843952215.mp4";
 import qmsaiImage from "@assets/Screenshot 2025-09-02 091603_1756829775786.png";
 
 export default function Hero() {
@@ -22,10 +22,13 @@ export default function Hero() {
         {/* LearnBot interface - appears second */}
         <div className="absolute top-10 right-10 w-96 h-64 staggered-bg-2 z-20">
           <div className="w-full h-full bg-gray-900/80 rounded-xl border border-blue-400/50 shadow-2xl">
-            <img 
-              src={learnbotImage}
-              alt="LearnBot interface"
-              className="w-full h-full object-cover rounded-xl opacity-80"
+            <video 
+              src={learnbotVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover rounded-xl opacity-90"
             />
           </div>
         </div>
@@ -45,9 +48,12 @@ export default function Hero() {
         {/* MediSense interface - appears fourth */}
         <div className="absolute top-10 left-10 w-80 h-60 staggered-bg-4 z-20">
           <div className="w-full h-full bg-white/95 rounded-xl shadow-2xl border border-blue-400/50">
-            <img 
-              src={medisenseImage}
-              alt="MediSense AI Diagnostics"
+            <video 
+              src={medisenseVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover rounded-xl"
             />
           </div>
