@@ -40,6 +40,23 @@ export default function Hero() {
           </div>
         </div>
         
+        {/* SchoolMind (QMS AI) interface - appears fourth */}
+        <div className="absolute top-1/2 left-10 w-80 h-56 staggered-bg-4 z-20">
+          <div className="w-full h-full bg-blue-900/90 rounded-xl backdrop-blur-sm border border-blue-400/50 shadow-2xl">
+            <div className="p-4">
+              <div className="flex items-center mb-3">
+                <div className="w-3 h-3 bg-blue-400 rounded-full mr-2"></div>
+                <div className="text-blue-300 font-semibold">SchoolMind - QMS AI</div>
+              </div>
+              <div className="text-white text-sm mb-2">📊 Student Performance Analytics</div>
+              <div className="text-blue-200 text-xs mb-1">✓ Grade Management System</div>
+              <div className="text-blue-200 text-xs mb-1">✓ Behavioral Tracking</div>
+              <div className="text-blue-200 text-xs mb-1">✓ Parent Communication Portal</div>
+              <div className="text-green-400 text-xs mt-2">Status: Active • 1,247 students monitored</div>
+            </div>
+          </div>
+        </div>
+        
         {/* Reduced gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-purple-900/40 to-indigo-900/50"></div>
       </div>
