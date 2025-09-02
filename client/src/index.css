@@ -541,18 +541,26 @@
   50% { border-color: currentColor; }
 }
 
-/* Intelligent Software repeating animation */
+/* Intelligent Software repeating animation with movement */
 @keyframes intelligent-pulse {
   0% { 
-    transform: scale(1);
+    transform: translateY(0px) scale(1);
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
+  25% { 
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+  }
   50% { 
-    transform: scale(1.05);
+    transform: translateY(-15px) scale(1.05);
     box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.4);
   }
+  75% { 
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3);
+  }
   100% { 
-    transform: scale(1);
+    transform: translateY(0px) scale(1);
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
 }
