@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import learnbotVideo from "@assets/QMS AI (1)_1756843948574.mp4";
+import medisenseVideo from "@assets/Medi Sense_1756843952215.mp4";
 
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
@@ -141,6 +143,21 @@ export default function Products() {
                       </div>
                     ))}
                   </div>
+                  
+                  {/* Video demos for specific products */}
+                  {(product.id === 'medisense' || product.id === 'learnbot') && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-blue-600 mb-3">📹 Watch video demo!</h4>
+                      <div className="relative rounded-xl overflow-hidden shadow-lg">
+                        <video 
+                          src={product.id === 'medisense' ? medisenseVideo : learnbotVideo}
+                          controls
+                          className="w-full h-48 object-cover"
+                          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f3f4f6'/%3E%3C/svg%3E"
+                        />
+                      </div>
+                    </div>
+                  )}
                   {product.isCustomApp ? (
                     <Link href="/pricing">
                       <Button className="w-full btn-ultra ripple-button hover-lift py-3 text-lg font-semibold" data-testid={`button-learn-more-${product.id}`}>
