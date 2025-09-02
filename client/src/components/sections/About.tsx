@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import victoriaImage from "@assets/Victoria_1756850120791.jpg";
 
 export default function About() {
   return (
@@ -63,8 +64,8 @@ export default function About() {
               {/* Image glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Modern tech office with collaborative workspace" 
+                src={victoriaImage} 
+                alt="Beautiful Victoria, British Columbia - G-Tech headquarters location" 
                 className="w-full h-auto group-hover:scale-105 smooth-transition"
                 data-testid="img-office"
               />
