@@ -531,13 +531,30 @@
 
 /* Typewriter effect */
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 100%; }
 }
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: currentColor; }
+}
+
+/* Intelligent Software repeating animation */
+@keyframes intelligent-pulse {
+  0% { 
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.4);
+  }
+  100% { 
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
 }
 
 /* Magnetic hover effect */
@@ -642,9 +659,16 @@
 /* Typewriter text effect */
 .typewriter-effect {
   overflow: hidden;
-  border-right: 3px solid;
+  border-right: 3px solid rgba(255, 255, 255, 0.8);
   white-space: nowrap;
-  animation: typewriter 4s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typewriter 3s steps(25, end) forwards, blink-caret 0.75s step-end infinite;
+  width: 0;
+}
+
+/* Intelligent Software animation */
+.intelligent-animation {
+  animation: intelligent-pulse 2s ease-in-out infinite;
+  transform-origin: center;
 }
 
 /* Magnetic interactive elements */

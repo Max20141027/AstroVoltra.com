@@ -49,13 +49,11 @@ export default function Hero() {
             </span>
             <br />
             <span className="relative inline-block mt-3 group magnetic-element z-20">
-              <span className="glass-ultra px-6 py-3 rounded-2xl group-hover:scale-105 ultra-smooth shadow-2xl relative z-30">
+              <span className="glass-ultra px-6 py-3 rounded-2xl intelligent-animation relative z-30">
                 <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent font-extrabold">
                   Intelligent Software
                 </span>
               </span>
-              {/* Enhanced glow effect - positioned behind */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-2xl blur-xl opacity-30 group-hover:opacity-60 ultra-smooth z-10"></div>
             </span>
           </h1>
           
