@@ -43,18 +43,17 @@ export default function Hero() {
             </div>
           </div>
           
-          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight fade-in-up stagger-1 relative z-20">
-            <span className="relative inline-block z-30">
-              <span className="typewriter-effect">Building the Future of</span>
-            </span>
-            <br />
-            <span className="relative inline-block mt-3 group magnetic-element z-20">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight relative z-20">
+            <div className="typewriter-container mb-4">
+              <span className="typewriter-text">Building the Future of</span>
+            </div>
+            <div className="intelligent-container">
               <span className="glass-ultra px-6 py-3 rounded-2xl intelligent-animation relative z-30">
                 <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent font-extrabold">
                   Intelligent Software
                 </span>
               </span>
-            </span>
+            </div>
           </h1>
           
           <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto font-light leading-relaxed fade-in-up stagger-2 relative">

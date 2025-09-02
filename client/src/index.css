@@ -656,13 +656,26 @@
 .particle-ultra:nth-child(5) { animation-delay: -4s, -2s; }
 .particle-ultra:nth-child(6) { animation-delay: -5s, -2.5s; }
 
-/* Typewriter text effect */
-.typewriter-effect {
+/* Typewriter container and text */
+.typewriter-container {
+  display: inline-block;
+}
+
+.typewriter-text {
   overflow: hidden;
   border-right: 3px solid rgba(255, 255, 255, 0.8);
   white-space: nowrap;
-  animation: typewriter 3s steps(25, end) forwards, blink-caret 0.75s step-end infinite;
+  margin: 0;
+  animation: 
+    typewriter 3s steps(22, end) forwards,
+    blink-caret 0.75s step-end infinite;
   width: 0;
+  display: inline-block;
+}
+
+.intelligent-container {
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 /* Intelligent Software animation */
