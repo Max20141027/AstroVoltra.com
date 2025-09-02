@@ -13,7 +13,7 @@ export default function About() {
           <div className="space-y-8">
             <div className="slide-up-fade">
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                <span className="gradient-text-premium">About G-Tech</span>
+                <span className="gradient-text">About G-Tech</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-8 glow-animation"></div>
             </div>

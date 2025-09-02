@@ -50,7 +50,7 @@ export default function Hero() {
             <br />
             <span className="relative inline-block mt-3 group magnetic-element">
               <span className="glass-ultra px-6 py-3 rounded-2xl group-hover:scale-105 ultra-smooth shadow-2xl">
-                <span className="text-holographic neon-glow">
+                <span className="bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent font-extrabold">
                   Intelligent Software
                 </span>
               </span>

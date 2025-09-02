@@ -84,7 +84,7 @@ export default function Products() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20 slide-up-fade">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-holographic neon-glow">Our Notable Products</span>
+            <span className="gradient-text-premium">Our Notable Products</span>
           </h2>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Industry-recognized AI platforms that are transforming how we work, learn, and heal.

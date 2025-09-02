@@ -87,7 +87,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 slide-up-fade">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-            <span className="gradient-text-premium">Get in Touch</span>
+            <span className="gradient-text">Get in Touch</span>
           </h2>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to transform your business with AI? Let's explore how G-Tech can help you achieve your goals.

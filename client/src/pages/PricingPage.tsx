@@ -72,7 +72,7 @@ const PricingPage = () => {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-holographic neon-glow slide-up-fade">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent slide-up-fade">
             Transparent Pricing
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -94,7 +94,7 @@ const PricingPage = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-holographic slide-up-fade">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 slide-up-fade">
               Fixed-Price Packages
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
