@@ -144,18 +144,32 @@ export default function Products() {
                     ))}
                   </div>
                   
-                  {/* Video demos for specific products */}
+                  {/* Video demo links for specific products */}
                   {(product.id === 'medisense' || product.id === 'learnbot') && (
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-blue-600 mb-3">📹 Watch video demo!</h4>
-                      <div className="relative rounded-xl overflow-hidden shadow-lg">
-                        <video 
-                          src={product.id === 'medisense' ? medisenseVideo : learnbotVideo}
-                          controls
-                          className="w-full h-48 object-cover"
-                          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f3f4f6'/%3E%3C/svg%3E"
-                        />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <button className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition-colors duration-300 flex items-center justify-center gap-2 w-full py-2 hover:bg-blue-50 rounded-lg">
+                            📹 Watch video demo!
+                          </button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl max-h-[90vh] p-2">
+                          <DialogHeader>
+                            <DialogTitle className="text-center text-xl font-bold">
+                              {product.name} Demo
+                            </DialogTitle>
+                          </DialogHeader>
+                          <div className="relative w-full h-[70vh]">
+                            <video 
+                              src={product.id === 'medisense' ? medisenseVideo : learnbotVideo}
+                              controls
+                              autoPlay
+                              className="w-full h-full rounded-lg"
+                              style={{objectFit: 'contain'}}
+                            />
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   )}
                   {product.isCustomApp ? (
