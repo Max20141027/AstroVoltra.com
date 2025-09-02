@@ -686,6 +686,58 @@
   margin-top: 1rem;
 }
 
+/* Staggered background animations */
+.staggered-bg-1 {
+  opacity: 0;
+  animation: fade-in-stagger 1s ease-out forwards;
+  animation-delay: 0s;
+}
+
+.staggered-bg-2 {
+  opacity: 0;
+  animation: slide-in-right 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.staggered-bg-3 {
+  opacity: 0;
+  animation: slide-in-left 1s ease-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fade-in-stagger {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 /* Intelligent Software animation */
 .intelligent-animation {
   animation: intelligent-pulse 2s ease-in-out infinite;

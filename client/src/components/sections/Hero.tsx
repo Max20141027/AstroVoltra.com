@@ -5,13 +5,39 @@ import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341
 export default function Hero() {
   return (
     <section className="hero-gradient text-white py-24 lg:py-40 relative overflow-hidden perspective-container">
-      {/* Background image */}
+      {/* Staggered background images */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200" 
-          alt="AI technology background"
-          className="w-full h-full object-cover opacity-20"
-        />
+        {/* Main tech background - appears first */}
+        <div className="absolute inset-0 staggered-bg-1">
+          <img 
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&h=1200" 
+            alt="AI technology background"
+            className="w-full h-full object-cover opacity-15"
+          />
+        </div>
+        
+        {/* LearnBot interface - appears second */}
+        <div className="absolute top-10 right-10 w-96 h-64 staggered-bg-2">
+          <img 
+            src="@assets/Learnbot_1756829300667.png"
+            alt="LearnBot interface"
+            className="w-full h-full object-cover rounded-xl opacity-20 shadow-2xl"
+          />
+        </div>
+        
+        {/* Code interface overlay - appears third */}
+        <div className="absolute bottom-10 left-10 w-80 h-48 staggered-bg-3">
+          <div className="w-full h-full bg-gradient-to-br from-gray-900/40 to-blue-900/40 rounded-xl backdrop-blur-sm border border-white/10 opacity-25">
+            <div className="p-4 text-green-400 font-mono text-sm">
+              <div className="mb-2 text-blue-300">&gt; AI Learning System</div>
+              <div className="mb-1 text-yellow-300">const learnbot = new AIAssistant();</div>
+              <div className="mb-1">learnbot.initialize();</div>
+              <div className="text-green-300">// Ready to learn...</div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Overall gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-indigo-900/80"></div>
       </div>
       
