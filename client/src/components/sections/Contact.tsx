@@ -34,7 +34,7 @@ export default function Contact() {
       if (response.ok) {
         toast({
           title: "Message sent successfully!",
-          description: "Thank you for contacting G-Tech! We'll respond to your inquiry within 24 hours.",
+          description: "Thank you for contacting Astrovoltra! We'll respond to your inquiry within 24 hours.",
         });
         setFormData({ name: "", email: "", company: "", message: "" });
       } else {
@@ -90,7 +90,7 @@ export default function Contact() {
             <span className="gradient-text">Get in Touch</span>
           </h2>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your business with AI? Let's explore how G-Tech can help you achieve your goals.
+            Ready to transform your business with AI? Let's explore how Astrovoltra can help you achieve your goals.
           </p>
         </div>
         

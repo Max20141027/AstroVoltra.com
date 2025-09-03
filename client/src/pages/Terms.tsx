@@ -15,7 +15,7 @@ export default function Terms() {
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Acceptance of Terms</h2>
               <p>
-                By accessing and using G-Tech's AI platforms (Medi-sense, QMS AI, and LearnBot), 
+                By accessing and using Astrovoltra's AI platforms (Medi-sense, QMS AI, and LearnBot), 
                 you agree to be bound by these Terms of Service and all applicable laws and regulations. 
                 If you do not agree with any of these terms, you are prohibited from using our services.
               </p>
@@ -52,14 +52,14 @@ export default function Terms() {
                 <strong>Important:</strong> Medi-sense is designed to assist healthcare professionals 
                 and is not a substitute for professional medical judgment. Always consult with qualified 
                 healthcare providers for medical decisions. G-Tech is not responsible for medical outcomes 
-                based on the use of our diagnostic assistance tools.
+                based on the use of our diagnostic assistance tools. Astrovoltra is not responsible for medical outcomes based on the use of our diagnostic assistance tools.
               </p>
             </section>
 
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
               <p>
-                All content, features, and functionality of our platforms are owned by G-Tech and 
+                All content, features, and functionality of our platforms are owned by Astrovoltra and 
                 are protected by international copyright, trademark, patent, trade secret, and other 
                 intellectual property laws. You may not reproduce, distribute, or create derivative 
                 works without express written permission.
@@ -69,7 +69,7 @@ export default function Terms() {
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
               <p>
-                G-Tech shall not be liable for any indirect, incidental, special, consequential, 
+                Astrovoltra shall not be liable for any indirect, incidental, special, consequential, 
                 or punitive damages, including without limitation, loss of profits, data, use, 
                 goodwill, or other intangible losses resulting from your use of our services.
               </p>
@@ -87,7 +87,7 @@ export default function Terms() {
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
               <div className="bg-blue-50 p-6 rounded-xl">
-                <p><strong>G-Tech Legal Team</strong></p>
+                <p><strong>Astrovoltra Legal Team</strong></p>
                 <p>Email: <a href="mailto:gtech.service@outlook.com" className="text-blue-600 hover:text-blue-800 underline">gtech.service@outlook.com</a></p>
                 <p>Address: Victoria, British Columbia, Canada</p>
               </div>

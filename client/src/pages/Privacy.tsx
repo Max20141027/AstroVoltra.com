@@ -15,7 +15,7 @@ export default function Privacy() {
             <section>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Information We Collect</h2>
               <p>
-                At G-Tech, we collect information you provide directly to us, such as when you create an account, 
+                At Astrovoltra, we collect information you provide directly to us, such as when you create an account, 
                 use our AI platforms, contact us, or participate in surveys. This includes personal information 
                 like your name, email address, phone number, and professional details.
               </p>
@@ -56,7 +56,7 @@ export default function Privacy() {
               <p>
                 You have the right to access, update, or delete your personal information. You may also 
                 opt out of certain communications from us. For Canadian residents, we comply with PIPEDA. 
-                For questions about your data rights, please contact us at privacy@g-tech.ca.
+                For questions about your data rights, please contact us at privacy@astrovoltra.ca.
               </p>
             </section>
 
@@ -66,7 +66,7 @@ export default function Privacy() {
                 If you have questions about this Privacy Policy, please contact us at:
               </p>
               <div className="bg-blue-50 p-6 rounded-xl mt-4">
-                <p><strong>G-Tech Privacy Team</strong></p>
+                <p><strong>Astrovoltra Privacy Team</strong></p>
                 <p>Email: <a href="mailto:gtech.service@outlook.com" className="text-blue-600 hover:text-blue-800 underline">gtech.service@outlook.com</a></p>
                 <p>Address: Victoria, British Columbia, Canada</p>
               </div>

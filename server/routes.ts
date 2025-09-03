@@ -37,7 +37,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           <p><strong>Message:</strong></p>
           <p style="white-space: pre-wrap;">${message}</p>
           <hr>
-          <p><small>Sent from G-Tech website contact form</small></p>
+          <p><small>Sent from Astrovoltra website contact form</small></p>
         `
       });
 
@@ -81,7 +81,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Send application email using Resend
       const { data, error } = await resend.emails.send({
-        from: `G-Tech Careers <onboarding@resend.dev>`,
+        from: `Astrovoltra Careers <onboarding@resend.dev>`,
         to: ['gtech.service@outlook.com'],
         replyTo: email,
         subject: `Job Application - ${position} from ${name}`,
@@ -99,7 +99,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           </div>
           
           <hr>
-          <p><small>Sent from G-Tech website careers page</small></p>
+          <p><small>Sent from Astrovoltra website careers page</small></p>
         `
       });
 
@@ -139,11 +139,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       console.log("Chat message received:", message);
 
-      // Create system prompt with G-Tech information
-      const systemPrompt = `You are G AI, the intelligent assistant for G-Tech, a cutting-edge software engineering company specializing in AI-powered solutions. You're here to help visitors understand everything about our company and products.
+      // Create system prompt with Astrovoltra information
+      const systemPrompt = `You are Astra, the intelligent assistant for Astrovoltra, a cutting-edge software engineering company specializing in AI-powered solutions. You're here to help visitors understand everything about our company and products.
 
 ## COMPANY OVERVIEW
-**G-Tech** is a forward-thinking software engineering company based in the beautiful city of Victoria, Vancouver Island, British Columbia, Canada. We specialize in developing revolutionary AI-powered software solutions that transform industries and enhance lives.
+**Astrovoltra** is a forward-thinking software engineering company based in the beautiful city of Victoria, Vancouver Island, British Columbia, Canada. We specialize in developing revolutionary AI-powered software solutions that transform industries and enhance lives.
 
 **Our Mission**: To harness the power of artificial intelligence to create innovative software solutions that solve real-world problems across healthcare, education, and business sectors.
 
@@ -188,7 +188,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 - AI system integration and deployment
 - Ongoing support and optimization
 
-## WHY CHOOSE G-TECH
+## WHY CHOOSE ASTROVOLTRA
 - Proven expertise in AI across multiple industries
 - Located in Victoria, supporting local and global clients
 - Focus on practical, deployable AI solutions
@@ -204,7 +204,7 @@ Interested in our AI solutions? Contact us at gtech.service@outlook.com to discu
 - Always mention our Victoria, Vancouver Island location with pride
 - Encourage contacting gtech.service@outlook.com for business inquiries
 - Keep responses informative but conversational
-- If asked about other topics, politely redirect to G-Tech's AI solutions`;
+- If asked about other topics, politely redirect to Astrovoltra's AI solutions`;
 
       const response = await openai.chat.completions.create({
         model: "gpt-4o",

@@ -19,7 +19,7 @@ export default function ChatSidebar({ isOpen, onClose }: ChatSidebarProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Hi! I'm G AI, your assistant for learning about G-Tech. I can help you understand our AI products like Medi-sense, QMS AI, and LearnBot. What would you like to know?",
+      content: "Hi! I'm Astra, your assistant for learning about Astrovoltra. I can help you understand our AI products like Medi-sense, QMS AI, and LearnBot. What would you like to know?",
       sender: 'assistant',
       timestamp: new Date()
     }
@@ -113,8 +113,8 @@ export default function ChatSidebar({ isOpen, onClose }: ChatSidebarProps) {
               </svg>
             </div>
             <div>
-              <h2 className="text-xl font-bold">G AI Assistant</h2>
-              <p className="text-blue-100 text-sm">Ask me about G-Tech!</p>
+              <h2 className="text-xl font-bold">Astra Assistant</h2>
+              <p className="text-blue-100 text-sm">Ask me about Astrovoltra!</p>
             </div>
           </div>
           <Button 
@@ -178,7 +178,7 @@ export default function ChatSidebar({ isOpen, onClose }: ChatSidebarProps) {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask me about G-Tech..."
+              placeholder="Ask me about Astrovoltra..."
               className="flex-1 rounded-xl border-2 focus:border-blue-500"
               disabled={isLoading}
               data-testid="input-chat-message"

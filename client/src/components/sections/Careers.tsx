@@ -38,7 +38,7 @@ export default function Careers() {
       if (response.ok) {
         toast({
           title: "Application submitted successfully!",
-          description: "Thank you for your interest in G-Tech! We'll review your application and contact you within 48 hours.",
+          description: "Thank you for your interest in Astrovoltra! We'll review your application and contact you within 48 hours.",
         });
         setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
       } else {
@@ -145,7 +145,7 @@ export default function Careers() {
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-2">Join G-Tech</DialogTitle>
+                  <DialogTitle className="text-3xl text-center mb-2">Join Astrovoltra</DialogTitle>
                   <p className="text-center text-gray-600">Tell us about yourself and let's start a conversation</p>
                 </DialogHeader>
                 <form onSubmit={handleResumeSubmit} className="space-y-6 pt-4">
@@ -234,7 +234,7 @@ export default function Careers() {
                       rows={6}
                       value={resumeData.coverLetter}
                       onChange={handleResumeChange}
-                      placeholder="Tell us why you're interested in G-Tech and what makes you a great fit..."
+                      placeholder="Tell us why you're interested in Astrovoltra and what makes you a great fit..."
                       className="text-lg resize-none"
                     />
                   </div>

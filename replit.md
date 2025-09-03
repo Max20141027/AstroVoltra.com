@@ -1,6 +1,6 @@
 # Overview
 
-This is a full-stack web application for G-Tech, a software engineering company based in Victoria, Vancouver Island. The application serves as a corporate website showcasing G-Tech's AI-powered products including Medi-sense (medical diagnostics), QMS AI (educational management), and LearnBot (interactive AI tutor). The site features a modern design with sections for company information, product showcases, careers, and contact forms.
+This is a full-stack web application for Astrovoltra, a software engineering company based in Victoria, Vancouver Island. The application serves as a corporate website showcasing Astrovoltra's AI-powered products including Medi-sense (medical diagnostics), QMS AI (educational management), and LearnBot (interactive AI tutor). The site features a modern design with sections for company information, product showcases, careers, and contact forms.
 
 # User Preferences
 

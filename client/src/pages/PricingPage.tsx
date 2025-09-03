@@ -274,7 +274,7 @@ const PricingPage = () => {
                         <span className="text-amber-400 font-semibold">Elite Partnership Status</span>
                       </div>
                       <p className="text-gray-300 text-sm">
-                        Join an exclusive circle of industry leaders who trust G-Tech with their most critical software initiatives.
+                        Join an exclusive circle of industry leaders who trust Astrovoltra with their most critical software initiatives.
                       </p>
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
+import logoImage from "@assets/ChatGPT Image Sep 2, 2025, 08_23_47 PM_1756869910445.png";
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="mb-4">
               <img 
                 src={logoImage} 
-                alt="G-Tech"
+                alt="Astrovoltra"
                 className="h-16 w-auto rotate-90"
                 style={{ transformOrigin: 'center' }}
               />
@@ -64,7 +64,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 G-Tech. All rights reserved. | Built with ❤️ in Victoria, BC
+            © 2024 Astrovoltra. All rights reserved. | Built with ❤️ in Victoria, BC
           </p>
         </div>
       </div>

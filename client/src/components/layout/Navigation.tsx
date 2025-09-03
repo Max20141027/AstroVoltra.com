@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
+import logoImage from "@assets/ChatGPT Image Sep 2, 2025, 08_23_47 PM_1756869910445.png";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -35,7 +35,7 @@ export default function Navigation() {
               <div className="glass-ultra rounded-xl p-2 group-hover:scale-110 ultra-smooth depth-card">
                 <img 
                   src={logoImage} 
-                  alt="G-Tech"
+                  alt="Astrovoltra"
                   className="h-14 w-auto rotate-90 transition-transform duration-300"
                   style={{ transformOrigin: 'center' }}
                 />

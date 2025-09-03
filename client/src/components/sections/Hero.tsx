@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import logoImage from "@assets/ChatGPT Image Sep 1, 2025, 07_58_56 AM_1756743341073.png";
+import logoImage from "@assets/ChatGPT Image Sep 2, 2025, 08_23_47 PM_1756869910445.png";
 import learnbotImage from "@assets/Learnbot_1756829300667.png";
 import medisenseImage from "@assets/MediSense_1756829751720.png";
 import qmsaiImage from "@assets/Screenshot 2025-09-02 091603_1756829775786.png";
@@ -98,7 +98,7 @@ export default function Hero() {
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20 group-hover:border-white/40 transition-all duration-500">
                 <img 
                   src={logoImage} 
-                  alt="G-Tech"
+                  alt="Astrovoltra"
                   className="h-32 lg:h-40 w-auto rotate-90 group-hover:scale-110 transition-transform duration-500"
                   style={{ transformOrigin: 'center' }}
                 />
@@ -121,7 +121,7 @@ export default function Hero() {
           
           <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto font-light leading-relaxed fade-in-up stagger-2 relative">
             <span className="relative z-10">
-              G-Tech specializes in cutting-edge AI solutions that transform industries. 
+              Astrovoltra specializes in cutting-edge AI solutions that transform industries. 
               From medical diagnostics to educational platforms, we're pioneering the next generation of intelligent software.
             </span>
             {/* Subtle text background glow */}

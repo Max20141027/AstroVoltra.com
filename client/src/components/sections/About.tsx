@@ -14,14 +14,14 @@ export default function About() {
           <div className="space-y-8">
             <div className="slide-up-fade">
               <h2 className="text-5xl lg:text-6xl font-bold mb-6">
-                <span className="gradient-text">About G-Tech</span>
+                <span className="gradient-text">About Astrovoltra</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-8 glow-animation"></div>
             </div>
             
             <div className="space-y-6 slide-up-fade" style={{animationDelay: '0.2s'}}>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Founded in the heart of <span className="font-semibold text-blue-600">Victoria, Vancouver Island</span>, G-Tech is a pioneering software engineering 
+                Founded in the heart of <span className="font-semibold text-blue-600">Victoria, Vancouver Island</span>, Astrovoltra is a pioneering software engineering 
                 company dedicated to developing intelligent solutions that make a meaningful impact on society.
               </p>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -65,7 +65,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
               <img 
                 src={victoriaImage} 
-                alt="Beautiful Victoria, British Columbia - G-Tech headquarters location" 
+                alt="Beautiful Victoria, British Columbia - Astrovoltra headquarters location" 
                 className="w-full h-auto group-hover:scale-105 smooth-transition"
                 data-testid="img-office"
               />
