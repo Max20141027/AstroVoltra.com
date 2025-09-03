@@ -1,74 +1,7 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import emailjs from '@emailjs/browser';
 
 export default function Careers() {
-  const [resumeData, setResumeData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    position: "",
-    experience: "",
-    coverLetter: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleResumeSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Send application to backend (now using Resend)
-      const response = await fetch('/api/careers', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(resumeData)
-      });
-      
-      if (response.ok) {
-        toast({
-          title: "Application submitted successfully!",
-          description: "Thank you for your interest in Astrovoltra! We'll review your application and contact you within 48 hours.",
-        });
-        setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
-      } else {
-        throw new Error('Failed to submit application');
-      }
-      
-    } catch (error) {
-      console.error('Application sending failed:', error);
-      
-      // Fallback: Open default email client
-      const emailBody = `Name: ${resumeData.name}%0D%0AEmail: ${resumeData.email}%0D%0APosition: ${resumeData.position}%0D%0AExperience: ${resumeData.experience}%0D%0A%0D%0ACover Letter:%0D%0A${resumeData.coverLetter}`;
-      window.open(`mailto:astrovoltra.team@outlook.com?subject=Job Application - ${resumeData.position}&body=${emailBody}`, '_blank');
-      
-      toast({
-        title: "Email service unavailable",
-        description: "We've opened your email client to send your application directly to astrovoltra.team@outlook.com",
-      });
-      setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setResumeData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   const roles = [
     {
       id: "software-engineers",
@@ -127,148 +60,48 @@ export default function Careers() {
             </Card>
           ))}
         </div>
-        
-        <div className="text-center">
-          <div className="bg-white rounded-3xl p-10 glass-card border-0 max-w-2xl mx-auto">
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Don't see a perfect fit? We're always interested in hearing from talented individuals.
+
+        {/* Application section */}
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-12 border border-blue-100">
+            <h3 className="text-4xl font-bold text-gray-900 mb-6">Ready to Join Astrovoltra?</h3>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              We'd love to hear from you! Send us your resume and a cover letter explaining why you're excited about working with us.
             </p>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button 
-                  className="px-10 py-4 text-lg font-semibold rounded-xl hover:shadow-xl smooth-transition bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-                  data-testid="button-submit-resume"
-                >
-                  <span className="mr-2">📄</span>
-                  Submit Your Resume
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-2">Join Astrovoltra</DialogTitle>
-                  <p className="text-center text-gray-600">Tell us about yourself and let's start a conversation</p>
-                </DialogHeader>
-                <form onSubmit={handleResumeSubmit} className="space-y-6 pt-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="resume-name" className="text-lg font-semibold">Name *</Label>
-                      <Input
-                        id="resume-name"
-                        name="name"
-                        required
-                        value={resumeData.name}
-                        onChange={handleResumeChange}
-                        placeholder="Your full name"
-                        className="h-12 text-lg"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="resume-email" className="text-lg font-semibold">Email *</Label>
-                      <Input
-                        id="resume-email"
-                        name="email"
-                        type="email"
-                        required
-                        value={resumeData.email}
-                        onChange={handleResumeChange}
-                        placeholder="your.email@example.com"
-                        className="h-12 text-lg"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="resume-phone" className="text-lg font-semibold">Phone</Label>
-                      <Input
-                        id="resume-phone"
-                        name="phone"
-                        type="tel"
-                        value={resumeData.phone}
-                        onChange={handleResumeChange}
-                        placeholder="Your phone number"
-                        className="h-12 text-lg"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="resume-position" className="text-lg font-semibold">Interested Position</Label>
-                      <select
-                        id="resume-position"
-                        name="position"
-                        value={resumeData.position}
-                        onChange={handleResumeChange}
-                        className="h-12 text-lg w-full px-3 py-2 border border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none"
-                      >
-                        <option value="">Select a position</option>
-                        <option value="software-engineer">Software Engineer</option>
-                        <option value="ai-researcher">AI Researcher</option>
-                        <option value="ux-designer">UX Designer</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="resume-experience" className="text-lg font-semibold">Years of Experience</Label>
-                    <select
-                      id="resume-experience"
-                      name="experience"
-                      value={resumeData.experience}
-                      onChange={handleResumeChange}
-                      className="h-12 text-lg w-full px-3 py-2 border border-gray-300 rounded-xl focus:border-blue-500 focus:outline-none"
-                    >
-                      <option value="">Select experience level</option>
-                      <option value="0-2">0-2 years</option>
-                      <option value="3-5">3-5 years</option>
-                      <option value="6-10">6-10 years</option>
-                      <option value="10+">10+ years</option>
-                    </select>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="resume-cover" className="text-lg font-semibold">Cover Letter *</Label>
-                    <Textarea
-                      id="resume-cover"
-                      name="coverLetter"
-                      required
-                      rows={6}
-                      value={resumeData.coverLetter}
-                      onChange={handleResumeChange}
-                      placeholder="Tell us why you're interested in Astrovoltra and what makes you a great fit..."
-                      className="text-lg resize-none"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="resume-file" className="text-lg font-semibold">Resume/CV</Label>
-                    <Input
-                      id="resume-file"
-                      name="file"
-                      type="file"
-                      accept=".pdf,.doc,.docx"
-                      className="h-12 text-lg cursor-pointer"
-                    />
-                    <p className="text-sm text-gray-500">Accepted formats: PDF, DOC, DOCX (max 5MB)</p>
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full py-4 text-lg font-semibold rounded-xl" 
-                    disabled={isSubmitting}
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <span className="material-icons text-blue-600 text-3xl">email</span>
+                <div className="text-left">
+                  <h4 className="text-lg font-semibold text-gray-900">Send your application to:</h4>
+                  <a 
+                    href="mailto:astrovoltra.team@outlook.com"
+                    className="text-2xl font-bold text-blue-600 hover:text-blue-800 underline"
+                    data-testid="link-careers-email"
                   >
-                    {isSubmitting ? "Submitting..." : "Submit Application"}
-                    {!isSubmitting && <span className="ml-2">🚀</span>}
-                  </Button>
-                </form>
-              </DialogContent>
-            </Dialog>
+                    astrovoltra.team@outlook.com
+                  </a>
+                </div>
+              </div>
+              
+              <div className="text-gray-600 text-sm space-y-2">
+                <p><strong>Subject:</strong> Job Application - [Position Name]</p>
+                <p><strong>Include:</strong> Resume, Cover Letter, Portfolio (if applicable)</p>
+                <p><strong>Response Time:</strong> We'll get back to you within 48 hours</p>
+              </div>
+            </div>
+
+            <a 
+              href="mailto:astrovoltra.team@outlook.com?subject=Job Application&body=Hi Astrovoltra team,%0A%0AI'm interested in applying for a position at your company.%0A%0APosition of interest: %0AExperience level: %0A%0APlease find my resume and cover letter attached.%0A%0ALooking forward to hearing from you!"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transform hover:scale-105 smooth-transition"
+              data-testid="button-apply-email"
+            >
+              <span className="material-icons mr-2">send</span>
+              Send Application
+            </a>
           </div>
         </div>
       </div>
-      
-      {/* Background decoration */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
     </section>
   );
 }
