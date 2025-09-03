@@ -99,7 +99,7 @@ export default function Hero() {
                 <img 
                   src={logoImage} 
                   alt="Astrovoltra"
-                  className="h-32 lg:h-40 w-auto rotate-90 group-hover:scale-110 transition-transform duration-500"
+                  className="h-32 lg:h-40 w-auto group-hover:scale-110 transition-transform duration-500"
                   style={{ transformOrigin: 'center' }}
                 />
               </div>

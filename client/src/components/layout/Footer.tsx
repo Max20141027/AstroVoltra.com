@@ -17,7 +17,7 @@ export default function Footer() {
               <img 
                 src={logoImage} 
                 alt="Astrovoltra"
-                className="h-16 w-auto rotate-90"
+                className="h-16 w-auto"
                 style={{ transformOrigin: 'center' }}
               />
             </div>

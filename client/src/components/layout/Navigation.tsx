@@ -36,7 +36,7 @@ export default function Navigation() {
                 <img 
                   src={logoImage} 
                   alt="Astrovoltra"
-                  className="h-14 w-auto rotate-90 transition-transform duration-300"
+                  className="h-14 w-auto transition-transform duration-300"
                   style={{ transformOrigin: 'center' }}
                 />
               </div>
