@@ -26,7 +26,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email using Resend
       const { data, error } = await resend.emails.send({
         from: `Contact Form <onboarding@resend.dev>`,
-        to: ['gtech.service@outlook.com'],
+        to: ['astrovoltra.team@outlook.com'],
         replyTo: email,
         subject: `Contact Form Inquiry from ${name}`,
         html: `
@@ -82,7 +82,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send application email using Resend
       const { data, error } = await resend.emails.send({
         from: `Astrovoltra Careers <onboarding@resend.dev>`,
-        to: ['gtech.service@outlook.com'],
+        to: ['astrovoltra.team@outlook.com'],
         replyTo: email,
         subject: `Job Application - ${position} from ${name}`,
         html: `
@@ -148,7 +148,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 **Our Mission**: To harness the power of artificial intelligence to create innovative software solutions that solve real-world problems across healthcare, education, and business sectors.
 
 **Location**: Victoria, Vancouver Island, British Columbia, Canada
-**Contact**: gtech.service@outlook.com
+**Contact**: astrovoltra.team@outlook.com
 **Founded**: As a modern AI-first company focusing on practical applications
 
 ## OUR AI PRODUCT SUITE
@@ -196,13 +196,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 - Track record of successful AI implementations
 
 ## GETTING STARTED
-Interested in our AI solutions? Contact us at gtech.service@outlook.com to discuss how our products can transform your organization.
+Interested in our AI solutions? Contact us at astrovoltra.team@outlook.com to discuss how our products can transform your organization.
 
 **Response Guidelines**: 
 - Be enthusiastic about our AI products and company
 - Provide detailed information when asked about specific products
 - Always mention our Victoria, Vancouver Island location with pride
-- Encourage contacting gtech.service@outlook.com for business inquiries
+- Encourage contacting astrovoltra.team@outlook.com for business inquiries
 - Keep responses informative but conversational
 - If asked about other topics, politely redirect to Astrovoltra's AI solutions`;
 

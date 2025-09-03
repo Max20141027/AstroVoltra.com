@@ -46,11 +46,11 @@ export default function Contact() {
       
       // Fallback: Open default email client
       const emailBody = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-      window.open(`mailto:gtech.service@outlook.com?subject=Contact Form Inquiry&body=${emailBody}`, '_blank');
+      window.open(`mailto:astrovoltra.team@outlook.com?subject=Contact Form Inquiry&body=${emailBody}`, '_blank');
       
       toast({
         title: "Email service unavailable",
-        description: "We've opened your email client to send the message directly to gtech.service@outlook.com",
+        description: "We've opened your email client to send the message directly to astrovoltra.team@outlook.com",
       });
       setFormData({ name: "", email: "", company: "", message: "" });
     } finally {
@@ -74,7 +74,7 @@ export default function Contact() {
     {
       icon: "email",
       title: "Email",
-      details: ["gtech.service@outlook.com"]
+      details: ["astrovoltra.team@outlook.com"]
     }
   ];
 

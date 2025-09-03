@@ -297,7 +297,7 @@ const PricingPage = () => {
                     Membership is by application only. Limited to select organizations that align with our standards of excellence.
                   </p>
                   <div className="mt-6 text-amber-400 font-semibold">
-                    Contact: gtech.service@outlook.com
+                    Contact: astrovoltra.team@outlook.com
                   </div>
                 </div>
               </CardFooter>
@@ -340,7 +340,7 @@ const PricingPage = () => {
               </Button>
             </Link>
             <div className="mt-4 text-blue-100">
-              Contact us at <span className="font-semibold">gtech.service@outlook.com</span>
+              Contact us at <span className="font-semibold">astrovoltra.team@outlook.com</span>
             </div>
           </div>
         </div>
@@ -441,7 +441,7 @@ const PricingPage = () => {
               </Button>
             </Link>
             <div className="text-gray-300">
-              or email us at <span className="text-blue-400 font-semibold">gtech.service@outlook.com</span>
+              or email us at <span className="text-blue-400 font-semibold">astrovoltra.team@outlook.com</span>
             </div>
           </div>
         </div>

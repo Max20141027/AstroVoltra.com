@@ -50,11 +50,11 @@ export default function Careers() {
       
       // Fallback: Open default email client
       const emailBody = `Name: ${resumeData.name}%0D%0AEmail: ${resumeData.email}%0D%0APosition: ${resumeData.position}%0D%0AExperience: ${resumeData.experience}%0D%0A%0D%0ACover Letter:%0D%0A${resumeData.coverLetter}`;
-      window.open(`mailto:gtech.service@outlook.com?subject=Job Application - ${resumeData.position}&body=${emailBody}`, '_blank');
+      window.open(`mailto:astrovoltra.team@outlook.com?subject=Job Application - ${resumeData.position}&body=${emailBody}`, '_blank');
       
       toast({
         title: "Email service unavailable",
-        description: "We've opened your email client to send your application directly to gtech.service@outlook.com",
+        description: "We've opened your email client to send your application directly to astrovoltra.team@outlook.com",
       });
       setResumeData({ name: "", email: "", phone: "", position: "", experience: "", coverLetter: "" });
     } finally {

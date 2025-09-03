@@ -88,7 +88,7 @@ export default function Terms() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
               <div className="bg-blue-50 p-6 rounded-xl">
                 <p><strong>Astrovoltra Legal Team</strong></p>
-                <p>Email: <a href="mailto:gtech.service@outlook.com" className="text-blue-600 hover:text-blue-800 underline">gtech.service@outlook.com</a></p>
+                <p>Email: <a href="mailto:astrovoltra.team@outlook.com" className="text-blue-600 hover:text-blue-800 underline">astrovoltra.team@outlook.com</a></p>
                 <p>Address: Victoria, British Columbia, Canada</p>
               </div>
             </section>

@@ -26,7 +26,7 @@ export default function Footer() {
               that transform industries and improve lives.
             </p>
             <div className="flex space-x-4">
-              <a href="mailto:gtech.service@outlook.com" className="text-gray-400 hover:text-blue-400 smooth-transition" data-testid="link-email">
+              <a href="mailto:astrovoltra.team@outlook.com" className="text-gray-400 hover:text-blue-400 smooth-transition" data-testid="link-email">
                 <span className="material-icons text-xl">email</span>
               </a>
               <a href="/contact" className="text-gray-400 hover:text-blue-400 smooth-transition" data-testid="link-contact-footer">
