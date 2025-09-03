@@ -26,7 +26,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email using Resend
       const { data, error } = await resend.emails.send({
         from: `Astrovoltra Team <onboarding@resend.dev>`,
-        to: ['astrovoltra.team@outlook.com'],
+        to: ['gtech.service@outlook.com'],
         replyTo: email,
         subject: `[Astrovoltra] Contact Inquiry from ${name}`,
         html: `
@@ -82,7 +82,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send application email using Resend
       const { data, error } = await resend.emails.send({
         from: `Astrovoltra Careers <onboarding@resend.dev>`,
-        to: ['astrovoltra.team@outlook.com'],
+        to: ['gtech.service@outlook.com'],
         replyTo: email,
         subject: `[Astrovoltra] Job Application - ${position} from ${name}`,
         html: `
